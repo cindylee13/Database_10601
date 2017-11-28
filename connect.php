@@ -6,7 +6,6 @@
  $db = "dvd";
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed:");
  $conn->query("SET NAMES 'UTF8'");
- echo "success";
 
  //return $conn;
 

@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="adventure.html"><i class="fa fa-rebel"></i><span>Adventure</span></a>
 						<a href="comedy.html"><i class="fa fa-smile-o"></i><span>Comedy</span></a>
 						<a href="crime.html"><i class="fa fa-lock"></i><span>Crime</span></a>
-						<a href="horror.php"><i class="fa fa-bug"></i><span>Horror</span></a>
+						<a href="goods.php"><i class="fa fa-bug"></i><span>Horror</span></a>
 						<a href="drama.html"><i class="fa fa-television"></i><span>Drama</span></a>
 						<a href="science_fiction.html"><i class="fa fa-flask"></i><span>Science Fiction</span></a>
 						<a href="war.html"><i class="fa fa-fw fa-shield"></i><span>War</span></a>
@@ -58,7 +58,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn">
-						<a href="signin.html" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
+						<a href="signin.html" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In   </a>
+            <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Home Page </a>
 					</li>
 				</ul>
 			</div>
@@ -69,11 +70,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="agile-its-header">
 				<div class="logo">
 					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
-					<?php
-		// $result = GetName();
-	//	 echo "<img src=$result>";
-	//	 echo $result[0];
-			?>
 				</div>
 			</div>
 		</div>
@@ -119,104 +115,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- content-starts-here -->
 		<div class="main-content">
 			<div class="w3-categories">
-				<h3>Browse Categories</h3>
 				<div class="container">
-					<div class="col-md-3">
-						<div class="focus-grid w3layouts-boder1">
-							<a class="btn-8" href="categories.html">
-								<div class="focus-border">
-									<div class="focus-layout">
-										<div class="focus-image"><i class="fa fa-motorcycle"></i></div>
-										<h4 class="clrchg">Action</h4>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="focus-grid w3layouts-boder2">
-						<a class="btn-8" href="categories.html#parentVerticalTab2">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-rebel"></i></div>
-									<h4 class="clrchg"> Adventure</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder3">
-						<a class="btn-8" href="categories.html#parentVerticalTab3">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-car"></i></div>
-									<h4 class="clrchg">Comedy</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder4">
-						<a class="btn-8" href="categories.html#parentVerticalTab4">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-lock"></i></div>
-									<h4 class="clrchg">crime</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder5">
-						<a class="btn-8" href="horror.php">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-bug"></i></div>
-									<h4 class="clrchg">Horror</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder6">
-						<a class="btn-8" href="categories.html#parentVerticalTab6">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-television"></i></div>
-									<h4 class="clrchg">Drama</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder8">
-						<a class="btn-8" href="categories.html#parentVerticalTab8">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-fw fa-shield"></i></div>
-									<h4 class="clrchg">War</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder9">
-						<a class="btn-8" href="categories.html#parentVerticalTab9">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-flask"></i></div>
-									<h4 class="clrchg">Science Fiction</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
+          <?php
+           $horror_URL = GetURL("恐怖");
+					 $horror_Name = GetName("恐怖");
+          ?>
+					<?php
+					$i=0;
+					while ( $i<count($horror_URL) ) {
+					$Name=$horror_Name[$i];
+					$URL=$horror_URL[$i];
+					include "goods.php";
+					$i=$i+1;
+				}
+					 ?>
 				</div>
 			</div>
 			<div class="trending-ads">
