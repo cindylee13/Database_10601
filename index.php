@@ -5,6 +5,9 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
+<?php
+include('db.php');
+?>
 <html lang="en">
 <head>
 <title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
@@ -66,10 +69,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="agile-its-header">
 				<div class="logo">
 					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
+					<?php
+		 GetName();
+			?>
 				</div>
 			</div>
 		</div>
 	</header>
+
 	<!-- //header -->
 	<!-- Slider -->
 		<div class="slider">
