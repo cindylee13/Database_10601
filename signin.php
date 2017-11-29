@@ -70,19 +70,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //language-select -->
 </head>
 <body>
+    <?php include("MenuStrip.php"); ?>
 	<!-- Navigation -->
-		<?php include("MenuStrip.php"); ?>
+  <!--
+		<div class="agiletopbar">
+			<div class="wthreenavigation">
+				<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="action.html"><i class="fa fa-fw fa-motorcycle"></i><span>Action</span></a>
+						<a href="adventure.html"><i class="fa fa-fw fa-rebel"></i><span>Adventure</span></a>
+						<a href="comedy.html"><i class="fa fa-fw fa-smile-o"></i><span>Comedy</span></a>
+						<a href="crime.html"><i class="fa fa-fw fa-lock"></i><span>Crime</span></a>
+						<a href="EachCategory.php"><i class="fa fa-fw fa-bug"></i><span>Horror</span></a>
+						<a href="drama.html"><i class="fa fa-fw fa-television"></i><span>Drama</span></a>
+            <a href="science_fiction.html"><i class="fa fa-flask"></i><span>Science Fiction</span></a>
+						<a href="war.html"><i class="fa fa-fw fa-shield"></i><span>War</span></a>
+					</div>
+				</nav>
+				<button class="close-button" id="close-button">Close Menu</button>
+			</div>
+			<button class="menu-button" id="open-button"> </button>
+			</div>
+			<div class="clearfix"></div>
+		</div> -->
 		<!-- //Navigation -->
 	<!-- header -->
-	<header>
-		<div class="w3ls-header"><!--header-one-->
-			<div class="w3ls-header-left">
-			</div>
-			<div class="w3ls-header-right">
-				<ul>
-					<li class="dropdown head-dpdn">
-						<a href="index.php" aria-expanded="false"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
-					</li>
+  <header>
+    <div class="w3ls-header"><!--header-one-->
+      <div class="w3ls-header-right">
+        <ul>
+          <li class="dropdown head-dpdn">
+            <a href="signin.php" aria-expanded="false"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="clearfix"> </div>
+    </div>
 					<!-- </li>
 					<li class="dropdown head-dpdn">
 						<a href="#"><span class="active uls-trigger"><i class="fa fa-language" aria-hidden="true"></i>languages</span></a>
