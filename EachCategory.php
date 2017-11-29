@@ -30,27 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 		<!-- Navigation -->
-		<div class="agiletopbar">
-			<div class="wthreenavigation">
-				<div class="menu-wrap">
-				<nav class="menu">
-					<div class="icon-list">
-						<a href="action.html"><i class="fa fa-motorcycle" aria-hidden="true"></i><span>Action</span></a>
-						<a href="adventure.html"><i class="fa fa-rebel"></i><span>Adventure</span></a>
-						<a href="comedy.html"><i class="fa fa-smile-o"></i><span>Comedy</span></a>
-						<a href="crime.html"><i class="fa fa-lock"></i><span>Crime</span></a>
-						<a href="goods.php"><i class="fa fa-bug"></i><span>Horror</span></a>
-						<a href="drama.html"><i class="fa fa-television"></i><span>Drama</span></a>
-						<a href="science_fiction.html"><i class="fa fa-flask"></i><span>Science Fiction</span></a>
-						<a href="war.html"><i class="fa fa-fw fa-shield"></i><span>War</span></a>
-					</div>
-				</nav>
-				<button class="close-button" id="close-button">Close Menu</button>
-			</div>
-			<button class="menu-button" id="open-button"> </button>
-			</div>
-			<div class="clearfix"></div>
-		</div>
+		<?php include("MenuStrip.php")?>
 		<!-- //Navigation -->
 	<!-- header -->
 	<header>
@@ -117,14 +97,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3-categories">
 				<div class="container">
           <?php
-           $horror_URL = GetURL("恐怖");
-					 $horror_Name = GetName("恐怖");
+					 $type= $_GET["type"];
+           $dvd_URL = GetURL($type);
+					 $dvd_Name = GetName($type);
           ?>
 					<?php
 					$i=0;
-					while ( $i<count($horror_URL) ) {
-					$Name=$horror_Name[$i];
-					$URL=$horror_URL[$i];
+					while ( $i<count($dvd_URL) ) {
+					$Name=$dvd_Name[$i];
+					$URL=$dvd_URL[$i];
 					include "goods.php";
 					$i=$i+1;
 				}
