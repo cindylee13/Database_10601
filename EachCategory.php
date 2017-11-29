@@ -117,15 +117,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3-categories">
 				<div class="container">
           <?php
-           $horror_URL = GetURL("恐怖");
-					 $horror_Name = GetName("恐怖");
+					 $type= $_GET["type"];
+           $dvd_URL = GetURL($type);
+					 $dvd_Name = GetName($type);
           ?>
 					<?php
 					$i=0;
-					while ( $i<count($horror_URL) ) {
-					$Name=$horror_Name[$i];
-					$URL=$horror_URL[$i];
-					include "goods.php";
+					while ( $i<count($dvd_URL) ) {
+					$Name=$dvd_Name[$i];
+					$URL=$dvd_URL[$i];
+					include "Goods.php";
 					$i=$i+1;
 				}
 					 ?>

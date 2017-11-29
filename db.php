@@ -1,7 +1,7 @@
 <?php
 function GetURL($category)
 {
-  include 'connect.php';
+  include 'Connect.php';
   $sql="select * from dvd where Category='$category'";
   $result=  $conn->query($sql);
   $i=0;
@@ -15,7 +15,7 @@ function GetURL($category)
 
  function GetName($category)
  {
-   include 'connect.php';
+   include 'Connect.php';
    $sql="select * from dvd where Category='$category'";
    $result=  $conn->query($sql);
    $i=0;

@@ -21,12 +21,12 @@
 </head>
 <body>
   <div class="col-md-3">
-    <div class="focus-grid w3layouts-boder1">
-      <a class="btn-8" href="恐怖.php">
+    <div class= "focus-grid w3layouts-boder1" >
+      <a class="btn-8"  href= <?php echo "EachCategory.php?type=".$type ?> >
         <div class="focus-border">
           <div class="focus-layout">
-            <div class="focus-image"><i class="fa fa-motorcycle"></i></div>
-            <h4 class="clrchg">123</h4>
+            <div class="focus-image"><i class= "<?php echo $icon; ?>" ></i></div>
+            <h4 class="clrchg"><?php echo $categoryName; ?></h4>
           </div>
         </div>
       </a>
