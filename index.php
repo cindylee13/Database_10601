@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <?php
 include('db.php');
+$type = array("恐怖", "劇情");
 ?>
 <html lang="en">
 <head>
@@ -70,6 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="logo">
 					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
 					<?php
+					$list_arr = GetAllType();
+					echo $list_arr;
 		// $result = GetName();
 	//	 echo "<img src=$result>";
 	//	 echo $result[0];
@@ -169,18 +172,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>
 					</div>
-					<div class="col-md-3">
-					<div class="focus-grid w3layouts-boder5">
-						<a class="btn-8" href="horror.php">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-bug"></i></div>
-									<h4 class="clrchg">Horror</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					</div>
+					<<?php
+					  $type="恐怖.php";
+						include('Category.php');
+					 ?>
 					<div class="col-md-3">
 					<div class="focus-grid w3layouts-boder6">
 						<a class="btn-8" href="categories.html#parentVerticalTab6">

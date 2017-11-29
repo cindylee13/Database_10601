@@ -22,7 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="focus-border">
           <div class="focus-layout">
             <div class="focus-image">
-              <?php echo "<img src= $URL width=348 height=348>"; ?>
+              <?php echo "<img src= $URL width=170 height=170>"; ?>
             </i></div>
             <h4 class="clrchg"><?php echo $Name ?></h4>
           </div>
