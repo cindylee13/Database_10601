@@ -13,3 +13,5 @@ db.php - mysql語法統一寫在裡面，寫成function
 Goods.php - 每個商品顯示出來的照片 和 名稱
 input-	$Name=dvd_Name;
 	$URL=dvd_URL;
+
+MenuStrip.php - 將左側的DVD分類選項獨立出來(每個頁面若都有左邊的種類選擇 就直接include)
