@@ -178,7 +178,7 @@ header {
 	text-decoration:none;
 }
 .logo a span {
-	color:#0099e5;
+	color:#004B91;
 }
 .agileits_search input[type="text"] {
     outline: none;
@@ -765,7 +765,7 @@ a.w3layouts-explore-all:hover {
 }
 .w3layouts-boder1:hover,.w3layouts-boder2:hover,.w3layouts-boder3:hover,.w3layouts-boder4:hover,.w3layouts-boder5:hover,.w3layouts-boder6:hover,
 .w3layouts-boder7:hover,.w3layouts-boder8:hover,.w3layouts-boder9:hover,.w3layouts-boder10:hover,.w3layouts-boder11:hover,.w3layouts-boder12:hover {
-	border:1px solid #ff4c4c;
+	border:1px solid #df8012;
 }
 .btn-8:before, .btn-8:after {
   content: '';
@@ -794,9 +794,9 @@ a.w3layouts-explore-all:hover {
     padding: 60px 0;
 }
 .w3-categories h3 {
-    color: #0099e5;
-    font-size: 40px;
-    margin-bottom: 15px;
+    color: #004B91;
+    font-size: 35px;
+    margin-bottom: 10px;
     text-align: center;
 }
 .w3-categories h3:before, .w3-categories h3:after {
@@ -911,14 +911,18 @@ a.w3layouts-explore-all:hover {
     -o-transition: 1.5s all;
     -ms-transition: 1.5s all;
 }
-.focus-image i.fa.fa-rebel {
-	background:#ff9e29;
+
+.focus-image i.fa-rebel {
+	background:#FFCC33;
 }
 .focus-image i.fa-car {
 	background:#3fb7d2;
 }
+.focus-image i.fa-smile-o {
+	background:#9ECA3B;
+}
 .focus-image i.fa-motorcycle {
-	background:#15c01c;
+	background:#1ca39d;
 }
 .focus-image i.fa-lock {
 	background:#7e3b07;
@@ -927,13 +931,13 @@ a.w3layouts-explore-all:hover {
 	background:#1963ce;
 }
 .focus-image i.fa-bug {
-	background:#BE77FF;
+	background:	#FF5151;
 }
 .focus-image i.fa-television {
-	background:#7fbad8;
+	background:#FF9D6F;
 }
 .focus-image i.fa-shield {
-	background:#1ca39d;
+	background:#3fb7d2;
 }
 .focus-image i.fa-flask {
 	background:#f49ecf;
@@ -1979,7 +1983,7 @@ span.price:after {
 }
 h4.footer-head {
     font-size: 28px;
-    color: #ff4c4c;
+    color: #634D40;
     margin-bottom: 16px;
 }
 .wthree-footer-grid p {
@@ -2045,7 +2049,7 @@ span.glyphicon.glyphicon-map-marker {
 span.glyphicon.glyphicon-map-marker, span.glyphicon.glyphicon-earphone, span.glyphicon.glyphicon-user {
     color: #fff;
     font-size: 12px;
-    background-color: rgba(29, 211, 196, 0.75);
+    background-color: rgba(63, 114, 155, 0.75);
     padding: 6px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -5007,7 +5011,7 @@ label {
 		letter-spacing: 0px;
 	}
 	.logo a {
-		font-size: 45px;
+		font-size: 40px;
 		margin-left: 12px;
 	}
 	.main-banner {
