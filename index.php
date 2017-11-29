@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
 					<?php
 					$list_arr = GetAllType();
-			?>
+					?>
 				</div>
 			</div>
 		</div>
