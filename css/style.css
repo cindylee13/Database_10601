@@ -2030,10 +2030,10 @@ ul.location li {
 span.glyphicon.glyphicon-map-marker {
     margin-top: 3px;
 }
-span.glyphicon.glyphicon-map-marker, span.glyphicon.glyphicon-earphone, .glyphicon.glyphicon-envelope {
+span.glyphicon.glyphicon-map-marker, span.glyphicon.glyphicon-earphone, span.glyphicon.glyphicon-user {
     color: #fff;
     font-size: 12px;
-    background-color: rgba(0, 153, 229, 0.73);
+    background-color: rgba(29, 211, 196, 0.75);
     padding: 6px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
