@@ -1,7 +1,13 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Sign in :: w3layouts</title>
+<title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Sign up :: w3layouts</title>
 <link rel="stylesheet" href="css/bootstrap.min.css"><!-- bootstrap-CSS -->
 <link rel="stylesheet" href="css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
@@ -70,29 +76,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //language-select -->
 </head>
 <body>
-	<!-- Navigation -->
+  <!-- Navigation -->
   <?php include("MenuStrip.php"); ?>
-		<!-- //Navigation -->
+    <!-- //Navigation -->
 	<!-- header -->
   <header>
     <div class="w3ls-header"><!--header-one-->
       <div class="w3ls-header-right">
         <ul>
           <li class="dropdown head-dpdn">
-            <a href="signin.php" aria-expanded="false"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a>
+            <a href="index.php" aria-expanded="false"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a>
           </li>
         </ul>
       </div>
 
       <div class="clearfix"> </div>
     </div>
-					<!-- </li>
-					<li class="dropdown head-dpdn">
-						<a href="#"><span class="active uls-trigger"><i class="fa fa-language" aria-hidden="true"></i>languages</span></a>
-					</li>
-					<li class="dropdown head-dpdn">
-						<div class="header-right"> -->
+          <!-- </li>
+          <li class="dropdown head-dpdn">
+            <a href="#"><span class="active uls-trigger"><i class="fa fa-language" aria-hidden="true"></i>languages</span></a>
+          </li>
+          <li class="dropdown head-dpdn">
+            <div class="header-right"> -->
+  <!-- Large modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+          aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;</button>
+                  <h4 class="modal-title" id="myModalLabel">
 	<!-- Large modal -->
+		<!--	<div class="selectregion">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				<i class="fa fa-globe" aria-hidden="true"></i>Select City</button>
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 					aria-hidden="true">
 						<div class="modal-dialog modal-lg">
@@ -101,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 										&times;</button>
 									<h4 class="modal-title" id="myModalLabel">
-										<!--Please Choose Your Location</h4>
+										Please Choose Your Location</h4>
 								</div>
 								<div class="modal-body">
 									 <form class="form-horizontal" action="#" method="get">
@@ -517,88 +535,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<i class="fa fa-search" aria-hidden="true"> </i>
 						</button>
 					</form>
+				<a class="post-w3layouts-ad" href="post-ad.html">Post Free Ad</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
 	</header>
 	<!-- //header -->
-	<!-- sign in form -->
+	 <!-- sign up form -->
 	 <section>
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
-			<h3>Sign In</h3>
+			<h3>Sign Up</h3>
 				<form action="#" method="post">
-					<input type="email" name="Your Email" placeholder="Your Email" required="">
+					<input type="text" name="Name" placeholder="Name" required="">
+					<input type="email" name="Email" placeholder="Email" required="">
+					<input type="tel" name="tel" placeholder="Phone Number" required="">
+          <input type="birthday" name="Birthday" placeholder="Your Birthday" required="">
+          <input type="idnumber" name="IDNumber" placeholder="ID Card Number" required="">
 					<input type="password" name="Password" placeholder="Password" required="">
-					<input type="submit" value="Sign In">
-					<div class="forgot-grid">
-						<!-- Modal -->
-						<div class="modal fade" id="myModal2" role="dialog">
-							<div class="modal-dialog">
-							<!-- Modal content-->
-							<div class="modal-dialog modal-lg">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h3 class="w3ls-password">Get Password</h3>
-										<p class="get-pw">Enter your email address below and we'll send you an email with instructions.</p>
-										<form action="#" method="post">
-											<input type="text" class="user" name="email" placeholder="Email" required="">
-											<input type="submit" value="Submit">
-										</form>
-									</div>
-								</div>
-							</div>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
+					<input type="password" name="Password" placeholder="Confirm Password" required="">
+          <select name="YourSex">
+        　<option value="Male">Male</option>
+        　<option value="Female">Female</option>
+          </select>
+					<div class="signin-rit">
+						<span class="agree-checkbox">
+
+						</span>
 					</div>
+					<input type="submit" value="Sign Up">
 				</form>
-				<h6> Not a Member Yet? <a href="signup.php">Sign Up Now</a> </h6>
 			</div>
 		</div>
 	</section>
-	<!-- //sign in form -->
+	<!-- //sign up form -->
 	<!--footer section start-->
-		<footer>
-			<div class="w3-agileits-footer-top">
-				<div class="container">
-					<div class="wthree-foo-grids">
-						<div class="col-md-3 wthree-footer-grid">
-							<h4 class="footer-head">Who We Are</h4>
-              <address>
-								<ul class="location">
-									<li><span class="glyphicon glyphicon-user"></span></li>
-									<li>一群爆肝的北科大資工系大三學生</li>
-								</ul>
-								<div class="clearfix"> </div>
-								<ul class="location">
-								</ul>
-							</address>
-						</div>
-						<div class="col-md-3 wthree-footer-grid">
-						</div>
-						<div class="col-md-3 wthree-footer-grid">
-							<h4 class="footer-head">Contact Us</h4>
-							<address>
-								<ul class="location">
-									<li><span class="glyphicon glyphicon-map-marker"></span></li>
-									<li>台北市大安區忠孝東路三段一號</li>
-								</ul>
-								<div class="clearfix"> </div>
-								<ul class="location">
-									<li><span class="glyphicon glyphicon-earphone"></span></li>
-									<li>02-2771-2171</li>
-								</ul>
-								<div class="clearfix"> </div>
-								<ul class="location">
-								</ul>
-							</address>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-		</footer>
+  <footer>
+    <div class="w3-agileits-footer-top">
+      <div class="container">
+        <div class="wthree-foo-grids">
+          <div class="col-md-3 wthree-footer-grid">
+            <h4 class="footer-head">Who We Are</h4>
+            <address>
+              <ul class="location">
+                <li><span class="glyphicon glyphicon-user"></span></li>
+                <li>一群爆肝的北科大資工系大三學生</li>
+              </ul>
+              <div class="clearfix"> </div>
+              <ul class="location">
+              </ul>
+            </address>
+          </div>
+          <div class="col-md-3 wthree-footer-grid">
+          </div>
+          <div class="col-md-3 wthree-footer-grid">
+            <h4 class="footer-head">Contact Us</h4>
+            <address>
+              <ul class="location">
+                <li><span class="glyphicon glyphicon-map-marker"></span></li>
+                <li>台北市大安區忠孝東路三段一號</li>
+              </ul>
+              <div class="clearfix"> </div>
+              <ul class="location">
+                <li><span class="glyphicon glyphicon-earphone"></span></li>
+                <li>02-2771-2171</li>
+              </ul>
+              <div class="clearfix"> </div>
+              <ul class="location">
+              </ul>
+            </address>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+  </footer>
         <!--footer section end-->
 </body>
 		<!-- Navigation-JavaScript -->

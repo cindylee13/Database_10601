@@ -1031,7 +1031,7 @@ i.at {
 .agileinfo_signin form{
 	display:block;
 }
-.agileinfo_signin input[type="text"],.agileinfo_signin input[type="tel"],.agileinfo_signin input[type="email"],.agileinfo_signin input[type="password"] {
+.agileinfo_signin input[type="text"],.agileinfo_signin input[type="tel"],.agileinfo_signin input[type="email"],.agileinfo_signin input[type="password"],.agileinfo_signin input[type="birthday"],.agileinfo_signin input[type="idnumber"]{
     outline: none;
     padding: 10px;
     border: 1px solid #086FDF;
@@ -1046,7 +1046,19 @@ i.at {
 	-ms-transition:0.5s all;
 	-moz-transition:0.5s all;
 }
-.agileinfo_signin input[type="text"]:hover,.agileinfo_signin input[type="tel"]:hover,.agileinfo_signin input[type="email"]:hover, .agileinfo_signin input[type="password"]:hover {
+
+.agileinfo_signin select[name="YourSex"]{
+    outline: none;
+    padding: 10px;
+    border: 1px solid #086FDF;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 1px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.agileinfo_signin input[type="text"]:hover,.agileinfo_signin input[type="tel"]:hover,.agileinfo_signin input[type="email"]:hover,.agileinfo_signin input[type="password"]:hover,.agileinfo_signin input[type="birthday"]:hover,.agileinfo_signin input[type="idnumber"]:hover {
 	border: 1px solid #ff4c4c;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -6000,7 +6012,7 @@ label {
 	.sign-in-wrapper {
 		padding: 50px 0;
 	}
-	.agileinfo_signin input[type="text"], .agileinfo_signin input[type="tel"], .agileinfo_signin input[type="email"], .agileinfo_signin input[type="password"] {
+	.agileinfo_signin input[type="text"], .agileinfo_signin input[type="tel"], .agileinfo_signin input[type="email"], .agileinfo_signin input[type="password"], .agileinfo_signin input[type="birthday"],.agileinfo_signin input[type="idnumber"] {
 		font-size: 13px;
 	}
 	.agileinfo_signin {
