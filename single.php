@@ -117,24 +117,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="single-page main-grid-border">
 		<div class="container">
 			<div class="product-desc">
+        <?php  $id = @$_GET["Id"];  ?>
 				<div class="col-md-7 product-view">
-					<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
+          <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p>
 
 					<div class="flexslider">
 						<ul class="slides">
-							<li data-thumb="images/ss1.jpg">
-								<img src="images/ss1.jpg" />
-							</li>
-							<li data-thumb="images/ss2.jpg">
-								<img src="images/ss2.jpg" />
-							</li>
-							<li data-thumb="images/ss3.jpg">
-								<img src="images/ss3.jpg" />
-							</li>
-							<li data-thumb="images/ss4.jpg">
-								<img src="images/ss4.jpg" />
-							</li>
-						</ul>
+              <p> <img src=<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Picture']; ?> </p>
 					</div>
 					<!-- FlexSlider -->
 					  <script defer src="js/jquery.flexslider.js"></script>
@@ -150,27 +139,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 					<!-- //FlexSlider -->
 					<div class="product-details">
-						<h4><span class="w3layouts-agileinfo">Brand </span> : <a href="#">Company name</a><div class="clearfix"></div></h4>
-						<h4><span class="w3layouts-agileinfo">Views </span> : <strong>150</strong></h4>
-						<h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4>
-						<h4><span class="w3layouts-agileinfo">Summary</span> :<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p><div class="clearfix"></div></h4>
+						<h4><span class="w3layouts-agileinfo">出版商 </span> : <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Publisher']; ?></p>
+
+						<h4><span class="w3layouts-agileinfo">片長 </span> : <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Time']; ?></p>
+						<h4><span class="w3layouts-agileinfo">演員 </span> : <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Actor']; ?></p>
+						<h4><span class="w3layouts-agileinfo">劇情簡介 </span> :<p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Introduction']; ?></p>
 
 					</div>
 				</div>
-        <?php  $id = $_GET["Id"];  ?>
+        <?php  $id = @$_GET["Id"];  ?>
         <div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price">Price</p>
-							<h3 class="rate"><?php$dvd = GetDvdInformation((int)$id+1); echo "$".$dvd['Price']; ?></h3>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "售價 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$".$dvd['Price']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "Publish Date ".$dvd['Publish_Date']; ?></p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "上市日期 &nbsp&nbsp&nbsp&nbsp".$dvd['Publish_Date']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "Level ".$dvd['Level']; ?></p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "分級 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$dvd['Level']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 					</div>
