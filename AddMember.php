@@ -9,25 +9,26 @@ $IDNumber = $_POST['IDNumber'];
 $Email = $_POST['Email'];
 $Password = $_POST['Password'];
 $Password2 = $_POST['Password2'];
+$Sex = $_POST['YourSex'];
 $Id = (int)FindMax('member')+1;
-if($Password!=$Password2 )
+if($Password != $Password2 )
 {
-   echo  "Confirm Password is different from Password!";
+    echo  "Confirm Password is different from Password!";
+    echo "<meta http-equiv=REFRESH CONTENT=2;url=signup.php>";
+}
+else if(!strpos($Email,'@'))
+{
+    echo  "Confirm Password is different from Password!";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
 }
-else(!strpos($Email,'@') )
+else if(strlen($tel)!=10)
 {
-   echo  "Email isn't exist";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
-}
-else(strlen($tel)!=10)
-{
-   echo  "Cellphone number isn't exist";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    echo  "Cellphone number isn't exist";
+    echo "<meta http-equiv=REFRESH CONTENT=2;url=signup.php>";
 }
 else
 {
-  InsertMember($Id,(int)$Name,$Email,$tel,$Birthday,$IDNumber,$Email,$Password,1);
+  InsertMember($Id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex);
   $_SESSION['Id']=$Id;
   header("Location:index.php");
 }

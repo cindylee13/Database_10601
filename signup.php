@@ -159,8 +159,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<input type="text" name="Password" placeholder="Password" required="">
 					<input type="text" name="Password2" placeholder="Confirm Password" required="">
           <select name="YourSex">
-        　<option value="Male">Male</option>
-        　<option value="Female">Female</option>
+        　<option value=1>Male</option>
+        　<option value=0>Female</option>
           </select>
 					<div class="signin-rit">
 						<span class="agree-checkbox">

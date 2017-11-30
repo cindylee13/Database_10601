@@ -4,8 +4,8 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php session_start();
-      $_SESSION['Id']=0;
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <?php
@@ -32,7 +32,20 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn">
-						<a href="signin.php" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
+							<?php
+									if($_SESSION['Id']>0)
+									{
+										echo "<a "."aria-expanded="."false"."><i class="."fa fa-user"."aria-hidden="."true>";
+											echo "</i> Sign Out</a>";
+										  $_SESSION['Id']=0;
+									}
+									else
+									{
+										echo "<a href="."signin.php"."aria-expanded="."false"."><i class="."fa fa-user"."aria-hidden="."true>";
+										echo"</i> Sign In</a>";
+									}
+							 ?>
+
 					</li>
 				</ul>
 			</div>
