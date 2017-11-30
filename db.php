@@ -38,4 +38,24 @@ function GetURL($category)
      }
     return $list_arr;
   }
+
+  function InsertMember($id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex)
+  {
+    include 'Connect.php';
+    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber')";
+    $r = $conn->query($sql);
+  }
+
+  function FindMax($table)
+  {
+    include 'Connect.php';
+    $sql = "SELECT MAX(Id) FROM ".$table;
+    $result=  $conn->query($sql);
+    $list_arr=array();
+    while($rows= mysqli_fetch_array($result)){
+      $list_arr = $rows;
+     }
+     echo $list_arr[0];
+    return $list_arr[0];
+  }
 ?>

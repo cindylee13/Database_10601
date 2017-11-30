@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php include("db.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -541,20 +542,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</header>
-	<!-- //header -->
-	 <!-- sign up form -->
+  <?php
+    if( isset($_GET['submit']) )
+    {
+        //be sure to validate and clean your variables
+        $val1 = htmlentities($_GET['Name']);
+        $val2 = htmlentities($_GET['Email']);
+        $val3 = htmlentities($_GET['tel']);
+        $val4 = htmlentities($_GET['Birthday']);
+        $val5 = htmlentities($_GET['IDNumber']);
+        $val6 = htmlentities($_GET['Password']);
+        $val7 = htmlentities($_GET['Password2']);
+        InsertMember($val1, $val2,$val3,$val4,$val5,$val6,$val7);
+        echo "OKOKOKOKOKOKOKOKO";
+    }
+  ?>
 	 <section>
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign Up</h3>
-				<form action="#" method="post">
+				<form action="AddMember.php"   method="post">
 					<input type="text" name="Name" placeholder="Name" required="">
-					<input type="email" name="Email" placeholder="Email" required="">
-					<input type="tel" name="tel" placeholder="Phone Number" required="">
-          <input type="birthday" name="Birthday" placeholder="Your Birthday" required="">
-          <input type="idnumber" name="IDNumber" placeholder="ID Card Number" required="">
-					<input type="password" name="Password" placeholder="Password" required="">
-					<input type="password" name="Password" placeholder="Confirm Password" required="">
+					<input type="text" name="Email" placeholder="Email" required="">
+					<input type="text" name="tel" placeholder="Phone Number" required="">
+          <input type="text" name="Birthday" placeholder="Your Birthday" required="">
+          <input type="number" name="IDNumber" placeholder="ID Card Number" required="">
+					<input type="text" name="Password" placeholder="Password" required="">
+					<input type="text" name="Password2" placeholder="Confirm Password" required="">
           <select name="YourSex">
         　<option value="Male">Male</option>
         　<option value="Female">Female</option>
@@ -564,7 +578,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						</span>
 					</div>
-					<input type="submit" value="Sign Up">
+					<input type="submit" value="Sign Up" >
 				</form>
 			</div>
 		</div>
