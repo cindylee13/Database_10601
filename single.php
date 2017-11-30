@@ -157,11 +157,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					</div>
 				</div>
+        <?php  $id = $_GET["Id"];  ?>
         <div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
 							<p class="p-price">Price</p>
-							<h3 class="rate"><?php $dvd = GetDvdInformation((int)$id+1); echo "$".$dvd['Price']; ?></h3>
+							<h3 class="rate"><?php$dvd = GetDvdInformation((int)$id+1); echo "$".$dvd['Price']; ?></h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
