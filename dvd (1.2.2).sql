@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-11-30 10:08:57
+-- 產生時間： 2017-11-30 11:23:39
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.11
 
@@ -103,8 +103,7 @@ CREATE TABLE `goods` (
 
 CREATE TABLE `member` (
   `Id` int(11) NOT NULL,
-  `FName` text NOT NULL,
-  `LName` text NOT NULL,
+  `Name` text NOT NULL,
   `Account` varchar(50) NOT NULL,
   `Password` text NOT NULL,
   `Email` text NOT NULL,
