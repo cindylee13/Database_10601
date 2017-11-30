@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <?php
 include('db.php');
-$id= $_GET["Id"];
+$_SESSION['Id']=0;
 ?>
 <html lang="en">
 <head>

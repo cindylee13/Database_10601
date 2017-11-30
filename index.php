@@ -4,6 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php session_start();
+      $_SESSION['Id']=0;
+?>
 <!DOCTYPE html>
 <?php
 include('db.php');
@@ -39,7 +42,7 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 		<div class="container">
       <div class="agile-its-header">
         <div class="logo">
-          <h1><a href="index.php"><span>NTUT  </span>DVD Store</a></h1>
+          <h1><a href="index.php"><span>NTUT  </span>DVD Store <?php echo $_SESSION['Id']; ?></a></h1>
         </div>
 			</div>
 		</div>
