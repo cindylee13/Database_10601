@@ -1,4 +1,4 @@
-  <link rel="stylesheet" href="style.css" ><!-- style.css -->
+  <link rel="stylesheet" href="css/style.css" ><!-- style.css -->
   <link rel="stylesheet" href="css/bootstrap.min.css"><!-- bootstrap-CSS -->
   <link rel="stylesheet" href="css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
   <link rel="stylesheet" href="css/flexslider.css" ><!-- flexslider-CSS -->

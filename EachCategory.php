@@ -46,7 +46,7 @@ include('db.php');
 
 	<!-- //header -->
 	<!-- Slider -->
-		<div class="slider">
+		<div class="slider mb-5">
 			<ul class="rslides" id="slider">
 				<li>
 					<div class="w3ls-slide-text">
@@ -82,38 +82,22 @@ include('db.php');
 		</div>
 		<!-- //Slider -->
 		<!-- content-starts-here -->
-			<div  class="card-deck">
-			  <div class="card">
-			    <img class="card-img-top" src="..." alt="Card image cap">
-			    <div class="card-body">
-			      <h4 class="card-title">Card title</h4>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
-			  </div>
-			  <div class="card">
-			    <img class="card-img-top" src="..." alt="Card image cap">
-			    <div class="card-body">
-			      <h4 class="card-title">Card title</h4>
-			      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
-			  </div>
-			  <div class="card">
-			    <img class="card-img-top" src="..." alt="Card image cap">
-			    <div class="card-body">
-			      <h4 class="card-title">Card title</h4>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
-			  </div>
-			</div>
+		<div class="container text-center mt-5">
+			  <div class="row  mt-5">
+					<?php
+					 $type= $_GET["type"];
+					 $dvd_URL = GetURL($type);
+					 $dvd_Name = GetName($type);
+					$i=0;
+					while ( $i<count($dvd_URL) ) {
+						$Name=$dvd_Name[$i];
+						$URL=$dvd_URL[$i];
+						include "goods.php";
+						$i=$i+1;
+					}
+				?>
+				</div>
+		  </div>
 
 
 			<div class="trending-ads">
