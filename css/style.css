@@ -3363,24 +3363,12 @@ span.w3layouts-agileinfo {
     font-size: 17px;
 }
 .item-price {
-	border: 3px solid rgba(255, 76, 76, 0.53);
+	border: 3px solid rgba(216, 216, 222, 0.9);
     margin-left: 15%;
     padding:0 15px;
 	position:relative;
 }
-.item-price:before {
-	    content: '';
-    position: absolute;
-    z-index: 1;
-    left: -50.5%;
-    background-color: rgba(0,0,0,0);
-    border: 105px solid rgba(0,0,0,0);
-    border-right-color: rgba(255, 76, 76, 0.53);
-    height: 0;
-    width: 0;
-    top: -3px;
-    border-right-width: 80px;
-}
+
 p.p-price {
     float: left;
     width: 50%;
@@ -3389,25 +3377,26 @@ p.p-price {
     font-weight: 400;
     color: #424242;
     vertical-align: middle;
-	margin-top:8px;
+	margin-top:15px;
 	margin-left: 20px;
 }
 h3.rate {
     float: left;
-    color: #0099e5;
-    font-size: 30px;
+    color: 	#000000;
+    font-size: 16px;
+		margin-top:20px;
 }
 .condition h4,.itemtype h4 {
     margin: 0;
     floaT: left;
-    font-size: 22px;
+    font-size: 20px;
 }
 .condition p,.itemtype p {
     margin: 0;
 	margin-left: 20px;
 }
 .product-price {
-    padding: 20px 0;
+    padding: 5px 0;
 }
 .condition {
     padding: 20px 0;
@@ -3420,7 +3409,7 @@ h3.rate {
 .interested {
     margin: 20px;
     padding: 40px 20px;
-    background: rgba(255, 76, 76, 0.53);
+    background: rgba(216, 216, 222, 0.9);
     margin-left: 15%;
     margin-right: 0;
 }
