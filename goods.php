@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<?php include("css.php"); ?>
-</head>
-<body>
-  <div class="col-md-3">
-    <div class="focus-grid w3layouts-boder">
-      <a class="btn-default" href="categories.html">
-        <div class="focus-border">
-          <div class="focus-layout">
-            <div class="focus-image">
-              <?php echo "<img src= $URL width=174 height=174>"; ?>
-            </i></div>
-            <h4 class="clrchg"><?php echo $Name ?></h4>
-          </div>
-        </div>
-      </a>
+<div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Card title that wraps to a new line</h4>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
   </div>
-</body>
-</html>
+  <div class="card p-3">
+    <blockquote class="blockquote mb-0 card-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
