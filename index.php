@@ -41,7 +41,6 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
         <div class="logo">
           <h1><a href="index.php"><span>NTUT  </span>DVD Store</a></h1>
         </div>
-					<?php $list_arr = GetAllType(); ?>
 			</div>
 		</div>
 	</header>

@@ -27,7 +27,15 @@ function GetURL($category)
     return $list_arr;
   }
 
-  function GetAllType()
+  function GetDvdInformation($id)
   {
-   }
+    include 'Connect.php';
+    $sql="select Price,Publish_Date,Level from dvd where Id='$id'";
+    $result=  $conn->query($sql);
+    $list_arr=array();
+    while($rows= mysqli_fetch_array($result)){
+      $list_arr = $rows;
+     }
+    return $list_arr;
+  }
 ?>

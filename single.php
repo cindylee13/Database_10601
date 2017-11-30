@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <?php
 include('db.php');
-$allType = array("horror", "drama","adventure","comedy","crime","sciencefiction","war","action");
+$id= $_GET["Id"];
 ?>
 <html lang="en">
 <head>
@@ -161,15 +161,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="item-price">
 						<div class="product-price">
 							<p class="p-price">Price</p>
-							<h3 class="rate">$123</h3>
+							<h3 class="rate"><?php $dvd = GetDvdInformation((int)$id+1); echo "$".$dvd['Price']; ?></h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price">Publish Date</p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "Publish Date ".$dvd['Publish_Date']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price">Level</p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "Level ".$dvd['Level']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 					</div>

@@ -92,13 +92,13 @@ include('db.php');
 					while ( $i<count($dvd_URL) ) {
 						$Name=$dvd_Name[$i];
 						$URL=$dvd_URL[$i];
-						include "goods.php";
+						$id=$i;
+						include ("goods.php");
 						$i=$i+1;
 					}
 				?>
 				</div>
 		  </div>
-
 
 			<div class="trending-ads">
 				<div class="container">
