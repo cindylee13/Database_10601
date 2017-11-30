@@ -48,13 +48,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 		</div>
 		<div class="container">
-			<div class="agile-its-header">
-				<div class="logo">
-					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
-					<?php
-					$list_arr = GetAllType();
-					?>
-				</div>
+      <div class="agile-its-header">
+        <div class="logo">
+          <h1><a href="index.php"><span>NTUT  </span>DVD Store</a></h1>
+        </div>
+					<?php $list_arr = GetAllType(); ?>
 			</div>
 		</div>
 	</header>
