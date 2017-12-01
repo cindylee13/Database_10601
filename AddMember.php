@@ -13,7 +13,7 @@ $Sex = $_POST['YourSex'];
 $Id = (int)FindMax('member')+1;
 if($Password != $Password2 )
 {
-    echo  "Confirm Password is different from Password!";
+    echo  $Password."Confirm Password is different from Password!".$Password2;
     echo "<meta http-equiv=REFRESH CONTENT=2;url=signup.php>";
 }
 else if(!strpos($Email,'@'))
