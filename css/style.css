@@ -3336,7 +3336,7 @@ form#upload {
     margin-top: 45px;
 }
 .product-details h4 {
-	color:#000;
+	color:rgb(99, 77, 64);
 	font-size:18px;
 	font-family: "微軟正黑體", "Microsoft JhengHei";
 	margin:15px 0;
@@ -3353,7 +3353,7 @@ span.w3layouts-agileinfo {
 }
 .product-details p {
     line-height: 1.8;
-    color: #848484;
+    color:rgb(99, 77, 64);
     font-size: 13px;
 		font-family: "微軟正黑體", "Microsoft JhengHei";
     margin: 8px 0;
@@ -3380,10 +3380,10 @@ p.p-price {
     float: left;
     width: 50%;
     margin: 0;
-		font-family: 'Ubuntu Condensed', sans-serif;
-    font-size: 20px;
+		font-family: "微軟正黑體", "Microsoft JhengHei";
+    font-size: 16px;
     font-weight: 400;
-    color: #424242;
+    color: rgb(99, 77, 64);
     vertical-align: middle;
 	margin-top:20px;
 	margin-left: 20px;
