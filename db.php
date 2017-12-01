@@ -56,7 +56,6 @@ function GetURL($category)
     while($rows= mysqli_fetch_array($result)){
       $list_arr = $rows;
      }
-    echo $list_arr[0];
     return $list_arr[0];
   }
 
@@ -71,4 +70,21 @@ function GetURL($category)
       return -1;
     }
   }
+
+function HaveSameEmail($email)
+{
+}
+
+function FindMember($account,$password)
+{
+  include 'Connect.php';
+  $sql = "SELECT Id FROM member where Account=".$account;
+  $result=  $conn->query($sql);
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr = $rows;
+   }
+  return $list_arr[0];
+}
+
 ?>

@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+function SignIn()
+{
+  $Acoount = $_POST['email'];
+  $Password = $_POST['password'];
+  $_SESSION['Id']=FindMember($Acoount,$Password);
+  echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+}
+if(isset($_POST['submit']))
+{
+   SignIn();
+}
+?>
 <html lang="en">
 <head>
 <title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Sign in :: w3layouts</title>
@@ -150,10 +163,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 										<h3 class="w3ls-password">Get Password</h3>
 										<p class="get-pw">Enter your email address below and we'll send you an email with instructions.</p>
-										<form action="#" method="post">
+										<form action="index.php" method="post">
 											<input type="text" class="user" name="email" placeholder="Email" required="">
 											<input type="submit" value="Submit">
 										</form>
+                    <?php SignIn(); ?>
 									</div>
 								</div>
 							</div>

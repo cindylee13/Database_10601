@@ -48,7 +48,12 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 						         else
 						         {
 						          echo "<a href="."signin.php"." aria-expanded="."false"."><i class="."fa fa-user"." aria-hidden="."true>";
-						          echo "</i> Sign In</a>";
+						          echo "</i> Sign In </a>";
+											if(HaveSameEmail("123@1"))
+												echo "true";
+											else {
+												echo "false";
+											}
 						         }
 						        ?>
 
