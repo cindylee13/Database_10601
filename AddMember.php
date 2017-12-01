@@ -13,19 +13,20 @@ $Sex = $_POST['YourSex'];
 $Id = (int)FindMax('member')+1;
 if($Password != $Password2 )
 {
-    echo  "Confirm Password is different from Password!";
+    echo "Confirm Password is different from Password!";
     echo "<meta http-equiv=REFRESH CONTENT=2;url=signup.php>";
 }
-else if(!strpos($Email,'@'))
+else if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*$/", $Email))
 {
-    echo  "Email isn't exist!";
+    echo  "Email format is not correct!";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
 }
-else if(strlen($tel)!=10)
+else if(!preg_match("/^[0][9][0-9]{8}/", $tel))
 {
-    echo  "Cellphone number isn't exist";
-    echo "<meta http-equiv=REFRESH CONTENT=2;url=signup.php>";
+    echo  "Phone Number format is not correct!";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
 }
+
 else
 {
   InsertMember($Id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex);
