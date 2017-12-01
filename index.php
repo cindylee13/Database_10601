@@ -250,6 +250,9 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 					});
 				});
 			</script>
+      <?php
+      include("below.php");
+      ?>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
 </body>

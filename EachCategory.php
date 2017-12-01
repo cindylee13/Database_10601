@@ -223,6 +223,10 @@ include('db.php');
 					});
 				});
 			</script>
+
+			<?php
+			include("below.php");
+			?>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
 </body>
