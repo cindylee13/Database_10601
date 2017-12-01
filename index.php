@@ -32,18 +32,12 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn">
+						<a href="signin.php" aria-expanded="false"><i class="fa fa-user" aria-hidden="true">
 							<?php
 									if($_SESSION['Id']>0)
-									{
-										echo "<a "."aria-expanded="."false"."><i class="."fa fa-user"."aria-hidden="."true>";
-											echo "</i> Sign Out</a>";
-										  $_SESSION['Id']=0;
-									}
+										echo "</i> Sign Out</a>";
 									else
-									{
-										echo "<a href="."signin.php"."aria-expanded="."false"."><i class="."fa fa-user"."aria-hidden="."true>";
-										echo"</i> Sign In</a>";
-									}
+										echo "</i> Sign In</a>";
 							 ?>
 
 					</li>
