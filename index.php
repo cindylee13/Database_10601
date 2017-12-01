@@ -6,6 +6,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
 session_start();
+if(is_array($_GET)&&count($_GET)>0)//先判断是否通过get传值了
+{
+    if(isset($_GET["Id"]))//是否存在"id"的参数
+    {
+          $_SESSION['Id']=$_GET["Id"];//存在
+    }
+}
 ?>
 <!DOCTYPE html>
 <?php
@@ -32,13 +39,18 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn">
-						<a href="signin.php" aria-expanded="false"><i class="fa fa-user" aria-hidden="true">
-							<?php
-									if($_SESSION['Id']>0)
-										echo "</i> Sign Out</a>";
-									else
-										echo "</i> Sign In</a>";
-							 ?>
+						<?php
+						         if(GetSession()>0)
+						         {
+						          echo "<a href="."index.php?Id=-1 "." aria-expanded="."false"."><i class="."fa fa-user"." aria-hidden="."true>";
+						          echo "</i> Log Out</a>";
+						         }
+						         else
+						         {
+						          echo "<a href="."signin.php"." aria-expanded="."false"."><i class="."fa fa-user"." aria-hidden="."true>";
+						          echo "</i> Sign In</a>";
+						         }
+						        ?>
 
 					</li>
 				</ul>
@@ -49,7 +61,7 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 		<div class="container">
       <div class="agile-its-header">
         <div class="logo">
-          <h1><a href="index.php"><span>NTUT  </span>DVD Store <?php echo $_SESSION['Id']; ?></a></h1>
+          <h1><a href="index.php"><span>NTUT  </span>DVD Store <?php echo GetSession() ?></a></h1>
         </div>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+<?php if (!isset($_SESSION)){session_start();} ?>
 <?php
 function GetURL($category)
 {
@@ -55,7 +56,19 @@ function GetURL($category)
     while($rows= mysqli_fetch_array($result)){
       $list_arr = $rows;
      }
-     echo $list_arr[0];
+    echo $list_arr[0];
     return $list_arr[0];
+  }
+
+  function GetSession()
+  {
+    if(isset($_SESSION['Id']))
+    {
+      return $_SESSION['Id'];
+    }
+    else
+    {
+      return -1;
+    }
   }
 ?>

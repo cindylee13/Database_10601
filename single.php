@@ -151,15 +151,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "售價 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$".$dvd['Price']; ?></p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "售價 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$".$dvd['Price']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "日期 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$dvd['Publish_Date']; ?></p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "上市日期 &nbsp&nbsp&nbsp&nbsp".$dvd['Publish_Date']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "分級 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$dvd['Level']; ?></p>
+							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "分級 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$dvd['Level']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 					</div>
