@@ -167,7 +167,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<input type="text" class="user" name="email" placeholder="Email" required="">
 											<input type="submit" value="Submit">
 										</form>
-                    <?php SignIn(); ?>
 									</div>
 								</div>
 							</div>
