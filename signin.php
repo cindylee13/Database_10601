@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h1><a href="index.php"><span>Re</span>sale-v2</a></h1>
 				</div>
 				<div class="agileits_search">
-					<form action="#" method="post">
+					<form action="signin.php" method="post">
 						<input name="Search" type="text" placeholder="How can we help you today?" required=" ">
 						<select id="agileinfo_search" name="agileinfo_search" required="">
 							<option value="">All Categories</option>
