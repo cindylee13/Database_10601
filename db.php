@@ -78,13 +78,23 @@ function HaveSameEmail($email)
 function FindMember($account,$password)
 {
   include 'Connect.php';
-  $sql = "SELECT Id FROM member where Account=".$account;
+  $sql = "SELECT Id FROM member where Email='$account' and Password='$password'";
   $result=  $conn->query($sql);
   $list_arr=array();
+  if(!$result)
+	{
+		echo ("Error: ".mysqli_error($conn));
+		exit();
+	}
   while($rows= mysqli_fetch_array($result)){
     $list_arr = $rows;
    }
-  return $list_arr[0];
-}
+ if(!empty($list_arr))
+    return $list_arr[0];
+else
+    return -1;
+  }
+  return -2;
+
 
 ?>

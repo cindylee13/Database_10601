@@ -2,13 +2,14 @@
 <?php
 function SignIn()
 {
-  $Acoount = $_POST['email'];
-  $Password = $_POST['password'];
+  include("db.php");
+  $Acoount = $_POST['Email'];
+  $Password = $_POST['Password'];
   $_SESSION['Id']=FindMember($Acoount,$Password);
-  echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
 }
-if(isset($_POST['submit']))
+if(isset($_POST['In']))
 {
+   echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
    SignIn();
 }
 ?>
@@ -148,30 +149,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign In</h3>
-				<form action="#" method="post">
-					<input type="email" name="Your Email" placeholder="Your Email" required="">
+				<form action="signin.php" method="post">
+					<input type="email" name="Email" placeholder="Your Email" required="">
 					<input type="password" name="Password" placeholder="Password" required="">
-					<input type="submit" value="Sign In">
+					<input type="submit" value="Sign In" name="In" >
 					<div class="forgot-grid">
+        </form>
 						<!-- Modal -->
-						<div class="modal fade" id="myModal2" role="dialog">
-							<div class="modal-dialog">
-							<!-- Modal content-->
-							<div class="modal-dialog modal-lg">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h3 class="w3ls-password">Get Password</h3>
-										<p class="get-pw">Enter your email address below and we'll send you an email with instructions.</p>
-										<form action="index.php" method="post">
-											<input type="text" class="user" name="email" placeholder="Email" required="">
-											<input type="submit" value="Submit">
-										</form>
-									</div>
-								</div>
-							</div>
-							</div>
-						</div>
 						<div class="clearfix"> </div>
 					</div>
 				</form>
