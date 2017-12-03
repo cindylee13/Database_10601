@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comment` (
   `DVD_Id` int(11) NOT NULL,
-  `Member_Id` int(11) NOT NULL,
+  `Customer_Id` int(11) NOT NULL,
   `Score` int(11) NOT NULL,
   `Comment_Text` text NOT NULL,
   `Date_Time` date NOT NULL
@@ -175,13 +175,12 @@ CREATE TABLE `goods` (
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `member`
+-- 資料表結構 `Customer`
 --
 
-CREATE TABLE `member` (
+CREATE TABLE `customer` (
   `Id` int(11) NOT NULL,
   `Name` text NOT NULL,
-  `Account` varchar(50) NOT NULL,
   `Password` text NOT NULL,
   `Email` text NOT NULL,
   `Phone` text NOT NULL,
@@ -190,6 +189,16 @@ CREATE TABLE `member` (
   `ID_Card_Number` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `manager` (
+  `Id` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `Password` text NOT NULL,
+  `Email` text NOT NULL,
+  `Phone` text NOT NULL,
+  `Sex` text NOT NULL,
+  `Birthday` text NOT NULL,
+  `ID_Card_Number` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------
 
 --
@@ -198,7 +207,7 @@ CREATE TABLE `member` (
 
 CREATE TABLE `order_list` (
   `Id` int(11) NOT NULL,
-  `Member_Id` int(11) NOT NULL,
+  `Customer_Id` int(11) NOT NULL,
   `Cost` int(11) NOT NULL,
   `State` text NOT NULL,
   `Date_Time` date NOT NULL
@@ -211,7 +220,7 @@ CREATE TABLE `order_list` (
 --
 
 CREATE TABLE `shopping_cart` (
-  `Member_Id` int(11) NOT NULL,
+  `Customer_Id` int(11) NOT NULL,
   `Goods_Id` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -223,7 +232,7 @@ CREATE TABLE `shopping_cart` (
 --
 
 CREATE TABLE `stroge_list` (
-  `Member_Id` int(11) NOT NULL,
+  `Customer_Id` int(11) NOT NULL,
   `Goods_Id` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `Cost` int(11) NOT NULL,
@@ -238,7 +247,7 @@ CREATE TABLE `stroge_list` (
 -- 資料表索引 `comment`
 --
 ALTER TABLE `comment`
-  ADD KEY `Member_Id` (`Member_Id`),
+  ADD KEY `Customer_Id` (`Customer_Id`),
   ADD KEY `DVD_Id` (`DVD_Id`);
 
 --
@@ -256,32 +265,31 @@ ALTER TABLE `goods`
   ADD KEY `DVD_Id` (`DVD_Id`);
 
 --
--- 資料表索引 `member`
+-- 資料表索引 `Customer`
 --
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`Id`),
-  ADD UNIQUE KEY `Account` (`Account`);
+ALTER TABLE `Customer`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- 資料表索引 `order_list`
 --
 ALTER TABLE `order_list`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `Member_Id` (`Member_Id`);
+  ADD KEY `Customer_Id` (`Customer_Id`);
 
 --
 -- 資料表索引 `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
   ADD KEY `Goods_Id` (`Goods_Id`),
-  ADD KEY `Member_Id` (`Member_Id`);
+  ADD KEY `Customer_Id` (`Customer_Id`);
 
 --
 -- 資料表索引 `stroge_list`
 --
 ALTER TABLE `stroge_list`
   ADD KEY `Goods_Id` (`Goods_Id`),
-  ADD KEY `Member_Id` (`Member_Id`);
+  ADD KEY `Customer_Id` (`Customer_Id`);
 
 --
 -- 已匯出資料表的限制(Constraint)
@@ -291,7 +299,7 @@ ALTER TABLE `stroge_list`
 -- 資料表的 Constraints `comment`
 --
 ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`Member_Id`) REFERENCES `member` (`Id`),
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`Customer_Id`) REFERENCES `Customer` (`Id`),
   ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`DVD_Id`) REFERENCES `dvd` (`Id`);
 
 --
@@ -304,21 +312,21 @@ ALTER TABLE `goods`
 -- 資料表的 Constraints `order_list`
 --
 ALTER TABLE `order_list`
-  ADD CONSTRAINT `order_list_ibfk_1` FOREIGN KEY (`Member_Id`) REFERENCES `member` (`Id`);
+  ADD CONSTRAINT `order_list_ibfk_1` FOREIGN KEY (`Customer_Id`) REFERENCES `Customer` (`Id`);
 
 --
 -- 資料表的 Constraints `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
   ADD CONSTRAINT `shopping_cart_ibfk_1` FOREIGN KEY (`Goods_Id`) REFERENCES `goods` (`Id`),
-  ADD CONSTRAINT `shopping_cart_ibfk_2` FOREIGN KEY (`Member_Id`) REFERENCES `member` (`Id`);
+  ADD CONSTRAINT `shopping_cart_ibfk_2` FOREIGN KEY (`Customer_Id`) REFERENCES `Customer` (`Id`);
 
 --
 -- 資料表的 Constraints `stroge_list`
 --
 ALTER TABLE `stroge_list`
   ADD CONSTRAINT `stroge_list_ibfk_1` FOREIGN KEY (`Goods_Id`) REFERENCES `goods` (`Id`),
-  ADD CONSTRAINT `stroge_list_ibfk_2` FOREIGN KEY (`Member_Id`) REFERENCES `member` (`Id`);
+  ADD CONSTRAINT `stroge_list_ibfk_2` FOREIGN KEY (`Customer_Id`) REFERENCES `Customer` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

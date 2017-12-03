@@ -160,6 +160,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</form>
 				<h6> Not a Member Yet? <a href="signup.php">Sign Up Now</a> </h6>
+        <h6> <a href="signinManager.php">Sign In For Manager</a> </h6>
 			</div>
 		</div>
 	</section>

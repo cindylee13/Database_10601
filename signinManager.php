@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <?php
-function SignIn()
+function SignInForManager()
 {
   include("db.php");
   $Acoount = $_POST['Email'];
   $Password = $_POST['Password'];
-  $_SESSION['Id']=FindMember($Acoount,$Password);
+  $_SESSION['Id']=FindManager($Acoount,$Password);
 }
+
 if(isset($_POST['In']))
 {
    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
-   SignIn();
+   SignInForManager();
 }
 ?>
+
 <html lang="en">
 <head>
 <title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Sign in :: w3layouts</title>
