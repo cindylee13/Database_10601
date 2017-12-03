@@ -4,19 +4,17 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <?php
 include('db.php');
-$_SESSION['Id']=0;
 ?>
 <html lang="en">
 <head>
 <title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
-<link rel="stylesheet" href="css/bootstrap.min.css"><!-- bootstrap-CSS -->
-<link rel="stylesheet" href="css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
-<link rel="stylesheet" href="css/font-awesome.min.css" /><!-- fontawesome-CSS -->
-<link rel="stylesheet" href="css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
+<<?php include("css.php") ?>
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
