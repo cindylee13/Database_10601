@@ -41,7 +41,7 @@ include('db.php');
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
+					<h1><a href="index.html"><span>NTUT  </span>DVD Store</a></h1>
 				</div>
 			</div>
 		</div>
