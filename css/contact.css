@@ -1,0 +1,143 @@
+.footer-0{
+  background-color:	#1C1C1C;
+  width: 100%;
+  color: white;
+}
+.footer-1 {
+  display: inline-block;
+  width: 200px;
+  margin-left: 250px;
+  list-style-type: none;
+}
+.footer-1 a,.footer-3 a{
+  text-decoration: none;
+  color:#919191;
+}
+.footer-2 {
+  float: right;
+  width: 200px;
+  margin-right: 200px;
+}
+.footer-1 p{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family:sans-serif;
+}
+.footer-3 li{
+  margin-bottom: 5px;
+  color:#919191;
+}
+.footer-1 li{
+  margin-bottom: 5px;
+  color:#919191;
+}
+.footer-2 li{
+  margin-right:50px;
+  display: inline;
+}
+.footer-2 img{
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+.footer-3 {
+  float: right;
+  width: 370px;
+  list-style-type: none;
+}
+.footer-2 p{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family:sans-serif;
+}
+.footer-3 p{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family:sans-serif;
+}
+.footer-4{
+  text-align: center;
+  color:#919191;
+}
+*{
+  box-sizing: border-box;
+  Xborder: 1px solid black;
+}
+ul, li, a, div,p ,h1{
+  padding: 0px;
+  margin: 0px;
+  text-decoration:none;
+}
+body,footer {
+  margin: 0px;
+  padding: 0px;
+  font-family: 微軟正黑體;
+}
+.block{
+  background-color: black;
+  width:100%;
+  height:50px;
+  margin:0 auto;
+}
+.header__nav{
+  display:flex;
+  flex-direction:row;
+  float: right;
+}
+.header__nav li{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  list-style-type: none;
+}
+.header__nav a{
+  font-size: 15px;
+  color: white;
+  flex-direction:row-reverse;
+  text-decoration:none;
+}
+.header{
+  width:100%;
+  height:50px;
+  margin:0 auto;
+  padding-left: 30px;
+}
+.title a{
+  margin: 0;
+  color: #0099e5;
+  font-family: Microsoft JhengHei;
+  text-decoration:none;
+  font-size: 60px;
+}
+.title a::after{
+  content: attr(target);
+  color: #ff4c4c;
+}
+.title{
+  margin-top: 15px;
+}
+.message{
+  width:auto;
+}
+.map{
+  width: 400px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+  display: inline-block;
+}
+.icon{
+  float: right;
+  margin-top: 100px;
+  margin-right: 210px;
+}
+.m_icon{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.m_icon a{
+  margin-left: 30px;
+  text-decoration:none;
+}
