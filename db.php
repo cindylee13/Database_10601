@@ -43,7 +43,7 @@ function GetURL($category)
   function InsertMember($id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex)
   {
     include 'Connect.php';
-    $sql ="INSERT INTO customer(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber')";
+    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber')";
     $r = $conn->query($sql);
   }
 
@@ -75,30 +75,10 @@ function HaveSameEmail($email)
 {
 }
 
-function FindManager($account,$password)
-{
-  include 'Connect.php';
-  $sql = "SELECT Id FROM manager where Email='$account' and Password='$password'";
-  $result=  $conn->query($sql);
-  $list_arr=array();
-  if(!$result)
-	{
-		echo ("Error: ".mysqli_error($conn));
-		exit();
-	}
-  while($rows= mysqli_fetch_array($result)){
-    $list_arr = $rows;
-   }
- if(!empty($list_arr))
-    return $list_arr[0];
-else
-    return -1;
-}
-
 function FindMember($account,$password)
 {
   include 'Connect.php';
-  $sql = "SELECT Id FROM customer where Email='$account' and Password='$password'";
+  $sql = "SELECT Id FROM member where Email='$account' and Password='$password'";
   $result=  $conn->query($sql);
   $list_arr=array();
   if(!$result)
@@ -113,8 +93,28 @@ function FindMember($account,$password)
     return $list_arr[0];
 else
     return -1;
+return -2;
 }
-  return -2;
 
-
+function FindShoppingCart($member_Id)
+{
+  include 'Connect.php';
+  $sql = "Select * from dvd , shopping_cart as s where s.Member_Id='$member_Id' and Id=s.DVD_Id";
+  $result=  $conn->query($sql);
+  $list_arr=array();
+  if(!$result)
+	{
+		echo ("Error: ".mysqli_error($conn));
+		exit();
+	}
+  $i=0;
+  while($rows = mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+ if(!empty($list_arr))
+    return $list_arr;
+else
+    return 0;
+}
 ?>

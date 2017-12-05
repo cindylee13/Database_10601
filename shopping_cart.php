@@ -91,7 +91,7 @@ include('db.php');
           <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
       </div><!--container-->
     </div>
-
+<?php include("MenuStrip.php");?>
     <div class="container">
 
       <section>
@@ -115,13 +115,20 @@ include('db.php');
 
       <section>
         <div class="create_box">
-          <?php  $id = @$_GET["Id"];  ?>
+          <?php
+            $shopping_cart=FindShoppingCart(GetSession());
+          ?>
           <ul >
-            <li class="create_box_one"><p> <img src=<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Picture']; ?> </p></li>
-            <li class="create_box_two"><p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p></li>
-            <li class="create_box_three">NT<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Price']; ?></li>
-            <li class="create_box_four">1</li>
-            <li class="create_box_five">500</li>
+            <?php
+            for($i=0;$i<count($shopping_cart);$i++)
+            {$price="NT".$shopping_cart[$i]['Price'];
+              echo "<li class="."create_box_one"."><p> <img src=" .$shopping_cart[$i]['Picture']." </p></li>";
+              echo "<li class="."create_box_two"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
+              echo "<li class="."create_box_three".">".$price."</li>";
+              echo "<li class="."create_box_four".">1</li>";
+              echo "<li class="."create_box_five".">500</li>";
+            }
+            ?>
           </ul>
           <div class="delete">
             <a href="#">
