@@ -3414,10 +3414,17 @@ h3.rate {
 .itemtype {
     padding: 20px 0;
 }
+.comment {
+	margin: 20px;
+	padding: 40px 20px;
+	background: rgba(225, 115, 17, 0.55);
+	margin-left: 15%;
+	margin-right: 0;
+}
 .interested {
     margin: 20px;
     padding: 40px 20px;
-    background: rgba(225, 115, 17, 0.55);
+
     margin-left: 15%;
     margin-right: 0;
 }
