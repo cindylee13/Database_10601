@@ -1,6 +1,6 @@
 <?php if (!isset($_SESSION)){session_start();} ?>
 <?php
-function GetURL($category)
+function GetDVDByCategory($category)
 {
   include 'Connect.php';
   $sql="select * from dvd where Category='$category'";
@@ -8,7 +8,7 @@ function GetURL($category)
   $i=0;
   $list_arr=array();
   while($rows= mysqli_fetch_array($result)){
-    $list_arr[$i]=$rows['Picture'];
+    $list_arr[$i]=$rows;
     $i++;
    }
    return $list_arr;

@@ -41,7 +41,7 @@ include('db.php');
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="index.html"><span>NTUT  </span>DVD Store</a></h1>
+					<h1><a href="index.html"><span>DVD STORE</span></a></h1>
 				</div>
 			</div>
 		</div>
@@ -89,13 +89,12 @@ include('db.php');
 			  <div class="row  mt-5">
 					<?php
 					 $type= $_GET["type"];
-					 $dvd_URL = GetURL($type);
-					 $dvd_Name = GetName($type);
+					 $dvd = GetDVDByCategory($type);
 					$i=0;
-					while ( $i<count($dvd_URL) ) {
-						$Name=$dvd_Name[$i];
-						$URL=$dvd_URL[$i];
-						$id=$i;
+					while ( $i<count($dvd) ) {
+						$Name=$dvd[$i]['Name'];
+						$URL=$dvd[$i]['Picture'];
+						$id=$dvd[$i]['Id']-1;
 						include ("goods.php");
 						$i=$i+1;
 					}
