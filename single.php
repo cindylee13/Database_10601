@@ -166,7 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <input type="submit" value="Add To Shopping Cart">
 					</div>
           <div class="interested text-center">
-                <iframe src="index.php" height="480" width="350" scrolling="yes"＞</iframe>
+                <iframe <?php echo "src=comment.php?DVD_ID=".$id?> height="480" width="350" scrolling="yes"＞</iframe>
           </div>
 				</div>
 

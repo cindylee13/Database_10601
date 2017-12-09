@@ -59,6 +59,20 @@ function GetDVDByCategory($category)
     return $list_arr[0];
   }
 
+  function GetComment($DVD_ID)
+  {
+    include 'Connect.php';
+    $sql="select * from comment where DVD_Id='$DVD_ID'";
+    $result=  $conn->query($sql);
+    $list_arr=array();
+    $i=0;
+    while($rows= mysqli_fetch_array($result)){
+      $list_arr[$i] = $rows;
+      $i++;
+     }
+    return $list_arr;
+  }
+
   function GetSession()
   {
     if(isset($_SESSION['Id']))
