@@ -10,6 +10,15 @@ session_start();
 <!DOCTYPE html>
 <?php
 include('db.php');
+$id = @$_GET["Id"];
+function AddGoodsToCart()
+{
+  $id = @$_GET["Id"];
+  $dvd = GetDvdInformation((int)$id+1);
+  AddToCart($dvd['Id']);
+}
+if(isset($_POST['add']))
+   AddGoodsToCart();
 ?>
 <html lang="en">
 <head>
@@ -115,7 +124,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="single-page main-grid-border">
 		<div class="container">
 			<div class="product-desc">
-        <?php  $id = @$_GET["Id"];  ?>
 				<div class="col-md-7 product-view">
           <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p>
 
@@ -153,17 +161,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "上市日期 &nbsp&nbsp&nbsp&nbsp".$dvd['Publish_Date']; ?></p>
+							<p class="p-price"><?php echo "上市日期 &nbsp&nbsp&nbsp&nbsp".$dvd['Publish_Date']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "分級 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$dvd['Level']; ?></p>
+							<p class="p-price"><?php echo "分級 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$dvd['Level']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 					</div>
-					<div class="interested text-center">
+					<div class="interested text-center" >
 						<h4>CLICK TO BUY THIS NOW!</h4>
-            <input type="submit" value="Add To Shopping Cart">
+            <form  action=<?php echo "single.php?Id=".$id; ?>  method="post">
+              <input type="submit" value="Add To Shopping Cart" name="add">
+            </form>
 					</div>
           <div class="interested text-center">
                 <iframe <?php echo "src=comment.php?DVD_ID=".$id?> height="480" width="350" scrolling="yes"＞</iframe>

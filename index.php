@@ -13,6 +13,7 @@ if(is_array($_GET)&&count($_GET)>0)//先判断是否通过get传值了
           $_SESSION['Id']=$_GET["Id"];//存在
     }
 }
+
 ?>
 <!DOCTYPE html>
 <?php

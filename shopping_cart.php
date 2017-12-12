@@ -1,9 +1,15 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <?php
+session_start();
 include('db.php');
+?>
+<?php
+function Delete($id)
+{
+  DeleteGoodsInCart($id);
+}
+if(isset($_GET['delete']))
+  Delete($_GET['delete']);
 ?>
 
 <html lang="en">
@@ -22,38 +28,6 @@ include('db.php');
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <!--//fonts-->
 
-    <script>
-      $(document).ready(function () {
-        var mySelect = $('#first-disabled2');
-
-        $('#special').on('click', function () {
-          mySelect.find('option:selected').prop('disabled', true);
-          mySelect.selectpicker('refresh');
-        });
-
-        $('#special2').on('click', function () {
-          mySelect.find('option:disabled').prop('disabled', false);
-          mySelect.selectpicker('refresh');
-        });
-
-        $('#basic2').selectpicker({
-          liveSearch: true,
-          maxOptions: 1
-        });
-      });
-    </script>
-    <!-- language-select -->
-    <script>
-    			$( document ).ready( function() {
-    				$( '.uls-trigger' ).uls( {
-    					onSelect : function( language ) {
-    						var languageName = $.uls.data.getAutonym( language );
-    						$( '.uls-trigger' ).text( languageName );
-    					},
-    					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
-    				} );
-    			} );
-    		</script>
     <!-- //language-select -->
     <link rel="stylesheet" href="css/flexslider.css" media="screen" /><!-- flexslider css -->
 
@@ -116,6 +90,7 @@ include('db.php');
       <section>
         <div class="create_box">
           <?php
+            $id = @$_GET["Id"];
             $shopping_cart=FindShoppingCart(GetSession());
           ?>
           <ul >
@@ -131,7 +106,7 @@ include('db.php');
             ?>
           </ul>
           <div class="delete">
-            <a href="#">
+            <a <?php echo "href="."shopping_cart.php?delete=3" ?>>
               <img class="img" src="images/rubbish-bin.png" alt="delete"/>
             </a>
           </div>

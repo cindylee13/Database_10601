@@ -6,12 +6,11 @@ function SignIn()
   $Acoount = $_POST['Email'];
   $Password = $_POST['Password'];
   $_SESSION['Id']=FindMember($Acoount,$Password);
+  if($_SESSION['Id']!=-1)
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
 }
 if(isset($_POST['In']))
-{
-   echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
    SignIn();
-}
 ?>
 <html lang="en">
 <head>
@@ -38,49 +37,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap-select.js"></script>
-<script>
-  $(document).ready(function () {
-    var mySelect = $('#first-disabled2');
-
-    $('#special').on('click', function () {
-      mySelect.find('option:selected').prop('disabled', true);
-      mySelect.selectpicker('refresh');
-    });
-
-    $('#special2').on('click', function () {
-      mySelect.find('option:disabled').prop('disabled', false);
-      mySelect.selectpicker('refresh');
-    });
-
-    $('#basic2').selectpicker({
-      liveSearch: true,
-      maxOptions: 1
-    });
-  });
-</script>
-<!-- language-select -->
-<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
-<link href="css/jquery.uls.css" rel="stylesheet"/>
-<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
-<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
-<!-- Source -->
-<script src="js/jquery.uls.data.js"></script>
-<script src="js/jquery.uls.data.utils.js"></script>
-<script src="js/jquery.uls.lcd.js"></script>
-<script src="js/jquery.uls.languagefilter.js"></script>
-<script src="js/jquery.uls.regionfilter.js"></script>
-<script src="js/jquery.uls.core.js"></script>
-<script>
-			$( document ).ready( function() {
-				$( '.uls-trigger' ).uls( {
-					onSelect : function( language ) {
-						var languageName = $.uls.data.getAutonym( language );
-						$( '.uls-trigger' ).text( languageName );
-					},
-					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
-				} );
-			} );
-		</script>
 <!-- //language-select -->
 </head>
 <body>
@@ -100,47 +56,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
       <div class="clearfix"> </div>
     </div>
-	<!-- Large modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-					aria-hidden="true">
-						<div class="modal-dialog modal-lg">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-										&times;</button>
-									<h4 class="modal-title" id="myModalLabel">
 
 			<div class="clearfix"> </div>
-		</div>
-		<div class="container">
-			<div class="agile-its-header">
-				<div class="logo">
-					<h1><a href="index.php"><span>Re</span>sale-v2</a></h1>
-				</div>
-				<div class="agileits_search">
-					<form action="signin.php" method="post">
-						<input name="Search" type="text" placeholder="How can we help you today?" required=" ">
-						<select id="agileinfo_search" name="agileinfo_search" required="">
-							<option value="">All Categories</option>
-							<option value="Mobiles">Mobiles</option>
-							<option value="Electronics & Appliances">Electronics & Appliances</option>
-							<option value="Cars">Cars</option>
-							<option value="Bikes">Bikes</option>
-							<option value="Furnitures">Furnitures</option>
-							<option value="Books, Sports & Hobbies">Books, Sports & Hobbies</option>
-							<option value="Fashion">Fashion</option>
-							<option value="Kids">Kids</option>
-							<option value="Services">Services</option>
-							<option value="Jobs">Jobs</option>
-							<option value="Real Estates">Real Estates</option>
-						</select>
-						<button type="submit" class="btn btn-default" aria-label="Left Align">
-							<i class="fa fa-search" aria-hidden="true"> </i>
-						</button>
-					</form>
-				</div>
-				<div class="clearfix"></div>
-			</div>
 		</div>
 	</header>
 	<!-- //header -->
@@ -160,7 +77,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</form>
 				<h6> Not a Member Yet? <a href="signup.php">Sign Up Now</a> </h6>
-        <h6> <a href="signinManager.php">Sign In For Manager</a> </h6>
 			</div>
 		</div>
 	</section>

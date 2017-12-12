@@ -10,7 +10,7 @@
   <font color="#1b17e2" size="5">
     <b>Here is DVD's comment</b>
   </font>
-  <div class="card" style="width: 20rem;">
+  <div class="card" style="word-wrap:break-word">
   <div class="card-body">
     <?php
     include("db.php");
@@ -21,11 +21,11 @@
         echo "<h4 class="."card-title".">".$i."</h4>";
         echo "<p class="."card-text".">".$comment[$i]['Comment_Text']."</p>";
         echo "<hr style="."border:1px dashed #000; height:1px"."</hr>";
+        echo "<hr style="."border:1px dashed #000; height:1px"."</hr>";
         }
       ?>
         <h4 class="card-title"><?php echo count($comment); ?></h4>
         <p class="card-text">I'm comment.</p>
-        <hr style="border:1px dashed #000; height:1px">
 
   </div>
 </div>
