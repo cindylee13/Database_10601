@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+/*include("db.php");
+for($i=1;$i<=96;$i++)
+{
+  $dvd=GetDvdInformation($i);
+  echo $dvd['Id'],",,",$dvd['Id'],",,",rand(0,5),",,,",$dvd['Price'];
+  AddStroage(1,$dvd['Id'],rand(0,5),$dvd['Price']);
+}*/
+ ?>
 <html lang="en">
   <head>
 

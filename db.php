@@ -157,4 +157,17 @@ function AddStroage($member_id,$DVD_id,$quantity,$cost)
   $sql = "Insert into stroge_list(Member_Id,DVD_Id,Quantity,Cost,Date_Time) Value('$member_id','$DVD_id','$quantity','$cost','$Date_Time')";
   $result=  $conn->query($sql);
 }
+
+function InsertDVD($name,$picture,$publisher,$introduction,$category,$date,$level,$time,$actor,$price,$quantity)
+{
+  include 'Connect.php';
+  $id = FindMax('dvd') + 1;
+  ECHO $id,$name,$picture,$publisher,$introduction,$category,$date,$level,$time,$actor,$price;
+  $sql = "Insert into dvd(Id,Name,Picture,Publisher,Introduction,Category,Publish_Date,Level,Time,Actor,Price) Value('$id','$name','$picture','$publisher','$introduction','$category','$date','$level','$time','$actor','$price')";
+  $result=  $conn->query($sql);
+  $Date_Time = date("Y-m-d");
+  $A=1;
+  $sql = "Insert into stroge_list(Member_Id,DVD_Id,Quantity,Cost,Date_Time) Value('$A','$id','$quantity','$price','$Date_Time')";
+  $result=  $conn->query($sql);
+}
 ?>
