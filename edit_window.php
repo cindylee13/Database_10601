@@ -10,12 +10,13 @@
   </div>
 
   <div class="fix-product">
-    <form>Name：</form>
-    <form>Price：<input type="text" name="欄位名稱"></form>
-    <form>Quantity：<input type="text" name="欄位名稱"></form>
+    <form>Name：<br>
+    Price：<input type="text" name="欄位名稱"><br>
+    Quantity：<input type="text" name="欄位名稱"><br>
     <button type="button" name="button">Delete The DVD</button><br>
     <button type="button" name="button">Cancel</button>
     <button type="button" name="button">Confirm</button>
+    </form>
   </div>
 
 </body>
