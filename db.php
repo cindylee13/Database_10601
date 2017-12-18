@@ -148,4 +148,13 @@ function AddToCart($id)
   $sql = "Insert into shopping_cart(Member_Id,DVD_Id,Quantity) Value('$member_id','$DVD_id','$quantity')";
   $result=  $conn->query($sql);
 }
+
+function AddStroage($member_id,$DVD_id,$quantity,$cost)
+{
+  include 'Connect.php';
+  $Date_Time = date("Y-m-d");
+//  echo $Date_Time;
+  $sql = "Insert into stroge_list(Member_Id,DVD_Id,Quantity,Cost,Date_Time) Value('$member_id','$DVD_id','$quantity','$cost','$Date_Time')";
+  $result=  $conn->query($sql);
+}
 ?>

@@ -13,12 +13,18 @@ include('db.php');
 $id = @$_GET["Id"];
 function AddGoodsToCart()
 {
+  echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
   $id = @$_GET["Id"];
   $dvd = GetDvdInformation((int)$id+1);
   AddToCart($dvd['Id']);
 }
 if(isset($_POST['add']))
+{
+  if(GetSession()!=-1)
    AddGoodsToCart();
+  else
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+ }
 ?>
 <html lang="en">
 <head>
@@ -171,8 +177,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="interested text-center" >
 						<h4>CLICK TO BUY THIS NOW!</h4>
-            <form  action=<?php echo "single.php?Id=".$id; ?>  method="post">
-              <input type="submit" value="Add To Shopping Cart" name="add">
+            <form  <?php echo "action="."single.php?Id=".$id; ?>  method="post">
+                <input type="submit" value="Add To Shopping Cart" name="add">
             </form>
 					</div>
           <div class="interested text-center">
