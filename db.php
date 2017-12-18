@@ -170,4 +170,18 @@ function InsertDVD($name,$picture,$publisher,$introduction,$category,$date,$leve
   $sql = "Insert into stroge_list(Member_Id,DVD_Id,Quantity,Cost,Date_Time) Value('$A','$id','$quantity','$price','$Date_Time')";
   $result=  $conn->query($sql);
 }
+
+function GetStroge()
+{
+  include 'Connect.php';
+  $sql="select * from stroge_list";
+  $result=  $conn->query($sql);
+  $list_arr=array();
+  $i=0;
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return $list_arr;
+}
 ?>

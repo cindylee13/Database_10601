@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-/*include("db.php");
-for($i=1;$i<=96;$i++)
+include("db.php");
+/*for($i=1;$i<=96;$i++)
 {
   $dvd=GetDvdInformation($i);
   echo $dvd['Id'],",,",$dvd['Id'],",,",rand(0,5),",,,",$dvd['Price'];
@@ -66,13 +66,22 @@ for($i=1;$i<=96;$i++)
       <section>
         <div class="stock__box">
           <ul>
-            <li class="list">ID</li>
-            <li class="list">Name</li>
-            <li class="list">Price</li>
-            <li class="list">Quantity</li>
-            <li class="list">State</li>
-            <input class="fix-button" type ="button" onclick="window.open('edit_window.php','edit_window',config='height=300,width=300')" value= edit></input>
-          </ul>
+            <?php
+            $stroge=GetStroge();
+            for($i=0;$i<count($stroge);$i++)
+            {
+              echo  "<li class="."list".">".$stroge[$i]['DVD_Id']."</li>";
+              echo  "<li class="."list".">".GetDvdInformation($stroge[$i]['DVD_Id'])['Name']."</li>";
+              echo  "<li class="."list".">".$stroge[$i]['Cost']."</li>";
+              echo  "<li class="."list".">".$stroge[$i]['Quantity']."</li>";
+              if($stroge[$i]['Quantity']>0)
+                echo  "<li class="."list".">"."Exist"."</li>";
+              else
+                echo  "<li class="."list".">"."Not Exist"."</li>";
+              echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('edit_window.php','edit_window',config='height=300,width=300')"." value= edit></input><br>";
+            }
+            ?>
+            </ul>
         </div>
       </section>
 
