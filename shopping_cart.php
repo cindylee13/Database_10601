@@ -3,9 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <?php
-<<<<<<< Updated upstream
 include('db.php');
-=======
 function Delete($DVD_Id)
 {
   DeleteGoodsInCart($DVD_Id);
@@ -15,7 +13,6 @@ if(isset($_GET['delete']))
   echo $_GET['delete'];
   Delete($_GET['delete']);
 }
->>>>>>> Stashed changes
 ?>
 
 <html lang="en">
@@ -105,10 +102,6 @@ if(isset($_GET['delete']))
           <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
       </div><!--container-->
     </div>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     <div class="container">
 
       <section>
@@ -135,23 +128,11 @@ if(isset($_GET['delete']))
         <div class="create_box">
           <?php  $id = @$_GET["Id"];  ?>
           <ul >
-<<<<<<< Updated upstream
-            <li class="create_box_one"><p> <img src=<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Picture']; ?> </p></li>
-            <li class="create_box_two"><p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p></li>
-            <li class="create_box_three">NT<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Price']; ?></li>
-            <li class="create_box_four">1</li>
-            <li class="create_box_five">500</li>
-            <li>
-              <div class="delete">
-                <a href="#">
-                  <img class="img" src="images/rubbish-bin.png" alt="delete"/>
-                </a>
-              </div>
-            </li>
-=======
             <?php
+            $shopping_cart=FindShoppingCart(GetSession());
             for($i=0;$i<count($shopping_cart);$i++)
-            {$price="NT".$shopping_cart[$i]['Price'];
+            {
+              $price="NT".$shopping_cart[$i]['Price'];
               echo "<li class="."create_box"."><p><img src=".$shopping_cart[$i]['Picture']."></p></li>";
               echo "<li class="."create_box"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
               echo "<li class="."create_box".">".$price."</li>";
@@ -159,9 +140,7 @@ if(isset($_GET['delete']))
               echo "<li class="."create_box".">500</li>";
               echo "<li class="."create_box"."><a href="."shopping_cart.php?delete=".$shopping_cart[$i]['Id']."><img src=images/rubbish-bin.png></li>";
             }
-
             ?>
->>>>>>> Stashed changes
           </ul>
         </div>
       </section>
