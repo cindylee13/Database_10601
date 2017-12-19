@@ -3,13 +3,26 @@ session_start();
 ?>
 <!DOCTYPE html>
 <?php
+<<<<<<< Updated upstream
 include('db.php');
+=======
+function Delete($DVD_Id)
+{
+  DeleteGoodsInCart($DVD_Id);
+}
+if(isset($_GET['delete']))
+{
+  echo $_GET['delete'];
+  Delete($_GET['delete']);
+}
+>>>>>>> Stashed changes
 ?>
 
 <html lang="en">
   <head>
     <title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
     <?php include("css.php") ?>
+    <link rel="stylesheet" href="css/shoppint_cart.css">
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -92,7 +105,10 @@ include('db.php');
           <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
       </div><!--container-->
     </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     <div class="container">
 
       <section>
@@ -109,6 +125,7 @@ include('db.php');
             <li class="list">Price</li>
             <li class="list">Quantity</li>
             <li class="list">Total</li>
+            <li class="list">Delete</li>
           </ul>
         </div>
       </section>
@@ -118,6 +135,7 @@ include('db.php');
         <div class="create_box">
           <?php  $id = @$_GET["Id"];  ?>
           <ul >
+<<<<<<< Updated upstream
             <li class="create_box_one"><p> <img src=<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Picture']; ?> </p></li>
             <li class="create_box_two"><p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p></li>
             <li class="create_box_three">NT<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Price']; ?></li>
@@ -130,13 +148,33 @@ include('db.php');
                 </a>
               </div>
             </li>
+=======
+            <?php
+            for($i=0;$i<count($shopping_cart);$i++)
+            {$price="NT".$shopping_cart[$i]['Price'];
+              echo "<li class="."create_box"."><p><img src=".$shopping_cart[$i]['Picture']."></p></li>";
+              echo "<li class="."create_box"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
+              echo "<li class="."create_box".">".$price."</li>";
+              echo "<li class="."create_box".">".$shopping_cart[$i]['Quantity']."</li>";
+              echo "<li class="."create_box".">500</li>";
+              echo "<li class="."create_box"."><a href="."shopping_cart.php?delete=".$shopping_cart[$i]['Id']."><img src=images/rubbish-bin.png></li>";
+            }
+
+            ?>
+>>>>>>> Stashed changes
           </ul>
         </div>
       </section>
 
       <section>
         <div class="total">
-          <span  style= "display:block">Sub Total: </span>
+          <span  style= "display:block">Sub Total:
+            <?php
+            $totalPrice=0;
+              for($i=0;$i<count($shopping_cart);$i++)
+                $totalPrice += ($shopping_cart[$i]['Price']*$shopping_cart[$i]['Quantity']);
+              echo $totalPrice;
+            ?></span>
           <span  style= "display:block">Discount: </span>
           <span  style= "display:block">Grand Toyal: </span>
         </div>
