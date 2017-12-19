@@ -135,7 +135,8 @@ else
 function DeleteGoodsInCart($id)
 {
     include 'Connect.php';
-    $sql = "delete from shopping_cart where Id=".$id;
+    $member_Id=GetSession();
+    $sql = "delete from shopping_cart where Member_Id='$member_Id' and DVD_ID='$id'";
     $result=  $conn->query($sql);
 }
 
@@ -153,7 +154,6 @@ function AddStroage($member_id,$DVD_id,$quantity,$cost)
 {
   include 'Connect.php';
   $Date_Time = date("Y-m-d");
-//  echo $Date_Time;
   $sql = "Insert into stroge_list(Member_Id,DVD_Id,Quantity,Cost,Date_Time) Value('$member_id','$DVD_id','$quantity','$cost','$Date_Time')";
   $result=  $conn->query($sql);
 }

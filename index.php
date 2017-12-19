@@ -43,7 +43,7 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
       <ul class="header__nav">
           <form action=Search.php method="Post" id="search-form">
             <input placeholder="Search for something..." type="text" name="name">
-            <input type="submit" value="Value" name="search">
+            <input type="submit" value="Submit" name="search">
           </form>
         <li><a href="#">News</a></li>
         <li><a href="#">Home</a></li>
