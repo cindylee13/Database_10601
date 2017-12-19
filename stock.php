@@ -10,12 +10,10 @@ include("db.php");
  ?>
 <html lang="en">
   <head>
-
     <meta charset="utf-8">
     <title>DVD Stock</title>
     <link rel="stylesheet" href="css/stock.css">
     <link rel="stylesheet" href="css/common.css">
-
   </head>
   <body>
 
@@ -38,7 +36,7 @@ include("db.php");
         <li><a href="#">About</a></li>
         <li><a href="#">Contact us</a></li>
         <li><a href="signin.php">Sign in</a></li>
-        <li><a href="shopping_cart.php"><img  src="shopping-cart.png" alt="shopping"></a></li>
+        <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
       </ul>
     </div>
 
@@ -48,8 +46,8 @@ include("db.php");
       </div>
     </div>
     <input class="insert-button" type ="button" onclick="window.open('insert_window.php','edit_window',config='height=300,width=300')" value= insert-DVD></input>
-    <input class="search-button" type ="button" onclick="window.open('list_window.php','list_window',config='height=400,width=1400')" value= checking-order></input>
-    <input class="member-button" type ="button" onclick="window.open('people_window.php','people_window',config='height=400,width=400')" value= insert-member></input>
+    <input class="search-button" type ="button" onclick="javascript:location.href='list_window.php','list_window',config='height=400,width=1400'" value= checking-order></input>
+    <input class="member-button" type ="button" onclick="javascript:location.href='people_window.php','people_window',config='height=400,width=400'" value= insert-member></input>
     <div class="container">
       <section>
           <div class="table__title">
@@ -103,12 +101,12 @@ include("db.php");
 
           <ul class="footer-2">
             <p>Connect With Us</p>
-            <li><a href="https://www.instagram.com/"><img src="instagram.png" alt="instagram"/></a></li>
-            <li><a href="https://www.facebook.com/"><img  src="facebook.png" alt="instagram"/></a></li>
-            <li><a href="https://www.youtube.com/"><img  src="youtube.png" alt="instagram"/></a></li>
-            <li><a href="https://twitter.com/?lang=zh-tw"><img src="twitter.png" alt="instagram"/></a></li>
-            <li><a href="https://plus.google.com/?hl=zh-TW" ><img  src="google-plus.png" alt="instagram"/></a></li>
-            <li><a href="https://www.skype.com/zh-Hant/new/"><img src="skype.png" alt="instagram"/></a></li>
+            <li><a href="https://www.instagram.com/"><img src="images/instagram.png" alt="instagram"/></a></li>
+            <li><a href="https://www.facebook.com/"><img  src="images/facebook.png" alt="instagram"/></a></li>
+            <li><a href="https://www.youtube.com/"><img  src="images/youtube.png" alt="instagram"/></a></li>
+            <li><a href="https://twitter.com/?lang=zh-tw"><img src="images/twitter.png" alt="instagram"/></a></li>
+            <li><a href="https://plus.google.com/?hl=zh-TW" ><img  src="images/google-plus.png" alt="instagram"/></a></li>
+            <li><a href="https://www.skype.com/zh-Hant/new/"><img src="images/skype.png" alt="instagram"/></a></li>
           </ul>
 
           <ul class="footer-3">
