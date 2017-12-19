@@ -207,7 +207,8 @@ CREATE TABLE `shopping_cart` (
   `Member_Id` int(11) NOT NULL,
   `DVD_Id` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) 
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
