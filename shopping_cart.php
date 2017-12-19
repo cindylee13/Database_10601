@@ -1,15 +1,9 @@
-<!DOCTYPE html>
 <?php
 session_start();
-include('db.php');
 ?>
+<!DOCTYPE html>
 <?php
-function Delete($id)
-{
-  DeleteGoodsInCart($id);
-}
-if(isset($_GET['delete']))
-  Delete($_GET['delete']);
+include('db.php');
 ?>
 
 <html lang="en">
@@ -28,12 +22,45 @@ if(isset($_GET['delete']))
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <!--//fonts-->
 
+    <script>
+      $(document).ready(function () {
+        var mySelect = $('#first-disabled2');
+
+        $('#special').on('click', function () {
+          mySelect.find('option:selected').prop('disabled', true);
+          mySelect.selectpicker('refresh');
+        });
+
+        $('#special2').on('click', function () {
+          mySelect.find('option:disabled').prop('disabled', false);
+          mySelect.selectpicker('refresh');
+        });
+
+        $('#basic2').selectpicker({
+          liveSearch: true,
+          maxOptions: 1
+        });
+      });
+    </script>
+    <!-- language-select -->
+    <script>
+    			$( document ).ready( function() {
+    				$( '.uls-trigger' ).uls( {
+    					onSelect : function( language ) {
+    						var languageName = $.uls.data.getAutonym( language );
+    						$( '.uls-trigger' ).text( languageName );
+    					},
+    					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+    				} );
+    			} );
+    		</script>
     <!-- //language-select -->
     <link rel="stylesheet" href="css/flexslider.css" media="screen" /><!-- flexslider css -->
 
     <meta charset="utf-8">
       <title>DVD Shopping Cart</title>
       <link rel="stylesheet" href="css/shopping_cart.css">
+      <link rel="stylesheet" href="css/common.css">
   </head>
 
   <body>
@@ -65,7 +92,7 @@ if(isset($_GET['delete']))
           <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
       </div><!--container-->
     </div>
-<?php include("MenuStrip.php");?>
+
     <div class="container">
 
       <section>
@@ -89,27 +116,21 @@ if(isset($_GET['delete']))
 
       <section>
         <div class="create_box">
-          <?php
-            $id = @$_GET["Id"];
-            $shopping_cart=FindShoppingCart(GetSession());
-          ?>
+          <?php  $id = @$_GET["Id"];  ?>
           <ul >
-            <?php
-            for($i=0;$i<count($shopping_cart);$i++)
-            {$price="NT".$shopping_cart[$i]['Price'];
-              echo "<li class="."create_box_one"."><p> <img src=" .$shopping_cart[$i]['Picture']." </p></li>";
-              echo "<li class="."create_box_two"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
-              echo "<li class="."create_box_three".">".$price."</li>";
-              echo "<li class="."create_box_four".">1</li>";
-              echo "<li class="."create_box_five".">500</li>";
-            }
-            ?>
+            <li class="create_box_one"><p> <img src=<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Picture']; ?> </p></li>
+            <li class="create_box_two"><p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p></li>
+            <li class="create_box_three">NT<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Price']; ?></li>
+            <li class="create_box_four">1</li>
+            <li class="create_box_five">500</li>
+            <li>
+              <div class="delete">
+                <a href="#">
+                  <img class="img" src="images/rubbish-bin.png" alt="delete"/>
+                </a>
+              </div>
+            </li>
           </ul>
-          <div class="delete">
-            <a <?php echo "href="."shopping_cart.php?delete=3" ?>>
-              <img class="img" src="images/rubbish-bin.png" alt="delete"/>
-            </a>
-          </div>
         </div>
       </section>
 
