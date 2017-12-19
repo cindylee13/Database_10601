@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+
+ ?>
 <html lang="en">
 <link rel="stylesheet" href="stock.css">
 

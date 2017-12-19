@@ -184,4 +184,19 @@ function GetStroge()
    }
   return $list_arr;
 }
+
+function SearchDVDByName($name)
+{
+  include 'Connect.php';
+  $sql="select Id from dvd where Name='$name'";
+  $result=  $conn->query($sql);
+  $list_arr=array();
+  $i=0;
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+   }
+   if(!empty($list_arr))
+      return $list_arr[0]['Id'];
+   return "-1";
+}
 ?>

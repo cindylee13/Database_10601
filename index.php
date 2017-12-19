@@ -13,11 +13,19 @@ if(is_array($_GET)&&count($_GET)>0)//先判断是否通过get传值了
           $_SESSION['Id']=$_GET["Id"];//存在
     }
 }
+include('db.php');
+if(isset($_POST['name']))
+{
+  $DVD_ID=SearchDVDByName($_POST['name']);
+  echo (int)$DVD_ID;
+  if($DVD_ID>0)
+    echo "<meta http-equiv=REFRESH CONTENT=2;url=single.php?Id=".(int)$DVD_ID.">";
+}
 
 ?>
 <!DOCTYPE html>
+
 <?php
-include('db.php');
 $allType = array("horror", "drama","adventure","comedy","crime","sciencefiction","war","action");
 $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa fa-lock","fa fa-flask","fa fa-shield","fa fa-motorcycle")
 ?>
@@ -34,11 +42,16 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 		<!-- Navigation -->
     <link rel="stylesheet" href="css/stock.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shopping_cart.css">
 		<!-- //Navigation -->
 	<!-- header -->
 	<header>
     <div class="block">
       <ul class="header__nav">
+          <form action=index.php method="Post" id="search-form">
+            <input value="search for something.." type="text" name="name">
+            <input type="submit" value="Value" name="search">
+          </form>
         <li><a href="#">News</a></li>
         <li><a href="#">Home</a></li>
         <li><a href="#">Product</a>
@@ -67,13 +80,13 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
                   echo "<li></i> Sign In </a></li>";
                  }
                 ?>
-        <li><a href="shopping_cart.php">shopping_cart</a></li>
+        <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
       </ul>
     </div>
 		<div class="container">
       <div class="agile-its-header">
         <div class="logo">
-          <h1><a href="index.php"><span>NTUT  </span>DVD Store <?php echo GetSession() ?></a></h1>
+          <h1><a href="index.php"><span>NTUT  </span>DVD Store <?php echo GetSession()?></a></h1>
         </div>
 			</div>
 		</div>
