@@ -15,7 +15,7 @@ function AddGoodsToCart()
 {
   echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
   $id = @$_GET["Id"];
-  $dvd = GetDvdInformation((int)$id+1);
+  $dvd = GetDvdInformation((int)$id);
   AddToCart($dvd['Id']);
 }
 if(isset($_POST['add']))
@@ -131,11 +131,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
-          <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Name']; ?></p>
+          <p><?php $dvd = GetDvdInformation((int)$id); echo $dvd['Name']; ?></p>
 
 					<div class="flexslider">
 						<ul class="slides">
-              <p> <img src=<?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Picture']; ?> </p>
+              <p> <img src=<?php echo $dvd['Picture']; ?> </p>
 					</div>
 					<!-- FlexSlider -->
 					  <script defer src="js/jquery.flexslider.js"></script>
@@ -151,11 +151,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 					<!-- //FlexSlider -->
 					<div class="product-details">
-						<h4><span class="w3layouts-agileinfo">出版商 </span> : <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Publisher']; ?></p>
+						<h4><span class="w3layouts-agileinfo">出版商 </span> : <p><?php  echo $dvd['Publisher']; ?></p>
 
-						<h4><span class="w3layouts-agileinfo">片長 </span> : <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Time']; ?></p>
-						<h4><span class="w3layouts-agileinfo">演員 </span> : <p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Actor']; ?></p>
-						<h4><span class="w3layouts-agileinfo">劇情簡介 </span> :<p><?php $dvd = GetDvdInformation((int)$id+1); echo $dvd['Introduction']; ?></p>
+						<h4><span class="w3layouts-agileinfo">片長 </span> : <p><?php  echo $dvd['Time']; ?></p>
+						<h4><span class="w3layouts-agileinfo">演員 </span> : <p><?php  echo $dvd['Actor']; ?></p>
+						<h4><span class="w3layouts-agileinfo">劇情簡介 </span> :<p><?php  echo $dvd['Introduction']; ?></p>
 
 					</div>
 				</div>
