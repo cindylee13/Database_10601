@@ -14,13 +14,6 @@ if(is_array($_GET)&&count($_GET)>0)//先判断是否通过get传值了
     }
 }
 include('db.php');
-if(isset($_POST['name']))
-{
-  $DVD_ID=SearchDVDByName($_POST['name']);
-  echo (int)$DVD_ID;
-  if($DVD_ID>0)
-    echo "<meta http-equiv=REFRESH CONTENT=2;url=single.php?Id=".(int)$DVD_ID.">";
-}
 
 ?>
 <!DOCTYPE html>
@@ -48,8 +41,8 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 	<header>
     <div class="block">
       <ul class="header__nav">
-          <form action=index.php method="Post" id="search-form">
-            <input value="search for something.." type="text" name="name">
+          <form action=Search.php method="Post" id="search-form">
+            <input placeholder="Search for something..." type="text" name="name">
             <input type="submit" value="Value" name="search">
           </form>
         <li><a href="#">News</a></li>
