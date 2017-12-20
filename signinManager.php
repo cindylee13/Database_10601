@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <?php
-function SignInForManager()
+function SignIn()
 {
   include("db.php");
   $Acoount = $_POST['Email'];
   $Password = $_POST['Password'];
-  $_SESSION['Id']=FindManager($Acoount,$Password);
+  $_SESSION['Id']=FindMember($Acoount,$Password);
+  if($_SESSION['Id']!=-1)
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
 }
-
 if(isset($_POST['In']))
-{
-   echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
-   SignInForManager();
-}
+   SignIn();
 ?>
 
 <html lang="en">
