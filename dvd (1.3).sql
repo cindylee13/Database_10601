@@ -172,7 +172,7 @@ CREATE TABLE `member` (
   `Phone` text NOT NULL,
   `Sex` text NOT NULL,
   `Birthday` text NOT NULL,
-  `ID_Card_Number` text NOT NULL,
+  `Address` text NOT NULL,
   `Status` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -207,7 +207,7 @@ CREATE TABLE `shopping_cart` (
   `Member_Id` int(11) NOT NULL,
   `DVD_Id` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
-) 
+)
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

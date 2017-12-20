@@ -31,11 +31,6 @@ else if(!preg_match("/^[1-9]\d{3}\/[0-1]\d{1}\/[1-3]\d{1}/", $Birthday))
     echo  "Birthday format is not correct! The correct formcat is YYYY/MM/DD ";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
 }
-else if(!preg_match("/^[A-Z]\d{9}/", $IDNumber))
-{
-    echo  "ID Card Number format is not correct! The correct formcat is YYYY/MM/DD ";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
-}
 else
 {
   InsertMember($Id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex);
