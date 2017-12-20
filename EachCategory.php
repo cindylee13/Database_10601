@@ -94,7 +94,7 @@ include('db.php');
 					while ( $i<count($dvd) ) {
 						$Name=$dvd[$i]['Name'];
 						$URL=$dvd[$i]['Picture'];
-						$id=$dvd[$i]['Id']-1;
+						$id=$dvd[$i]['Id'];
 						include ("goods.php");
 						$i=$i+1;
 					}

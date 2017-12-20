@@ -162,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price"><?php $dvd = GetDvdInformation((int)$id+1); echo "售價 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$".$dvd['Price']; ?></p>
+							<p class="p-price"><?php echo "售價 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$".$dvd['Price']; ?></p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">

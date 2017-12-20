@@ -145,8 +145,7 @@ function AddToCart($id)
   include 'Connect.php';
   $member_id=GetSession();
   $quantity=1;
-  $DVD_id=$id-1;
-  $sql = "Insert into shopping_cart(Member_Id,DVD_Id,Quantity) Value('$member_id','$DVD_id','$quantity')";
+  $sql = "Insert into shopping_cart(Member_Id,DVD_Id,Quantity) Value('$member_id','$id','$quantity')";
   $result=  $conn->query($sql);
 }
 
