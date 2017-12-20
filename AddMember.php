@@ -6,35 +6,64 @@ $Email = $_POST['Email'];
 $tel = $_POST['tel'];
 $Birthday = $_POST['Birthday'];
 $IDNumber = $_POST['IDNumber'];
-$Email = $_POST['Email'];
 $Password = $_POST['Password'];
-$Password2 = $_POST['Password2'];
+if(isset($_POST['Password2']))
+  $Password2 = $_POST['Password2'];
+else
+  $Password2 = $Password;
 $Sex = $_POST['YourSex'];
 $Id = (int)FindMax('member')+1;
+$status=$_GET['status'];
 if($Password != $Password2 )
 {
     echo "Confirm Password is different from Password!";
-    echo "<meta http-equiv=REFRESH CONTENT=2;url=signup.php>";
+    if($status==0)
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    else
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
 }
 else if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*$/", $Email))
 {
     echo  "Email format is not correct!";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    if($status==0)
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    else
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
 }
 else if(!preg_match("/^[0][9][0-9]{8}/", $tel))
 {
     echo  "Phone Number format is not correct!";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    if($status==0)
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    else
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
 }
 else if(!preg_match("/^[1-9]\d{3}\/[0-1]\d{1}\/[1-3]\d{1}/", $Birthday))
 {
     echo  "Birthday format is not correct! The correct formcat is YYYY/MM/DD ";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    if($status==0)
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    else
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
 }
+<<<<<<< HEAD
+=======
+else if(!preg_match("/^[A-Z]\d{9}/", $IDNumber))
+{
+    echo  "ID Card Number format is not correct! The correct formcat is [A-Z]\d{9} ";
+    if($status==0)
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
+    else
+      echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
+}
+>>>>>>> origin/master
 else
 {
-  InsertMember($Id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex);
+  InsertMember($Id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex,$status);
   $_SESSION['Id']=$Id;
-  header("Location:index.php");
+  if($status==0)
+    header("Location:index.php");
+  else
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
 }
 ?>

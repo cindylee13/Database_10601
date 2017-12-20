@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <?php
 include("db.php");
+$id=GetSession();
+$cart=FindShoppingCart($id);
+$price=0;
+for($i=0;$i<count($cart);$i++)
+{
+  $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
+  $price+= $dvd['Price'];
+  $quantity=$cart[$i]['Quantity'];
+}
+$Date_Time = date("Y-m-d");
+$max=InsertOrderList(GetSession(),$price,'0',$Date_Time);
+for($i=0;$i<count($cart);$i++)
+{
+  $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
+  InsertOrderListDVD($max,$dvd['Id']);
+}
+DeleteCart($id);
 ?>
 <html lang="en">
 <link rel="stylesheet" href="css/stock.css">
 <link rel="stylesheet" href="css/common.css">
 <body>
-  <div class="block">
-    <ul class="header__nav">
-      <li><a href="#">News</a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Product</a>
-        <ul>
-          <li><a href="#"  style="text-decoration:none;">Action</a></li>
-          <li><a href="#"  style="text-decoration:none;">Adventure</a></li>
-          <li><a href="#"  style="text-decoration:none;">Comedy</a></li>
-          <li><a href="#"  style="text-decoration:none;">Crime</a></li>
-          <li><a href="#"  style="text-decoration:none;">Horror</a></li>
-          <li><a href="#"  style="text-decoration:none;">Drama</a></li>
-          <li><a href="#"  style="text-decoration:none;">Science Fiction</a></li>
-          <li><a href="#"  style="text-decoration:none;">War</a></li>
-        </ul>
-      </li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact us</a></li>
-      <li><a href="signin.php">Sign in</a></li>
-      <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
-    </ul>
-  </div>
+<?php include("MenuStrip.php"); ?>
 
   <div class="header">
     <div class="title">
         <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
     </div><!--container-->
   </div>
+  <div class="container">
 
   <div class="head_text">
     <p>All of Order</p>
   </div>
-  <input class="goback-button" type ="button"  onclick="javascript:location.href='stock.php'" value= Go_Back></input>
-  <div class="table-product-0">
+  <?php
+  $status=GetStatus();
+  if($status==0)
+    echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='index.php'"." value= "."Go_Index"."></input>";
+  else
+    echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='stock.php'"." value= "."Go_Back"."></input>";
+  ?>
+  <div class="table-product-2">
     <ul>
-      <li class="list-order">ID</li>
+      <li class="list-order">ID </li>
       <li class="list-order">Member_ID</li>
+      <li class="list-order">DVD</li>
       <li class="list-order">Cost</li>
       <li class="list-order">state</li>
       <li class="list-order">Date_Time</li>
@@ -50,21 +54,14 @@ include("db.php");
     </ul>
   </div>
 
-  <div class="table-product-1">
+  <div class="table-product-3">
     <ul>
       <?php
-      $order=GetOrderlist();
-      for ($i=0; $i <count($order) ; $i++) {
-        echo "<li class="."list-order".">".$order[$i]['Id']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['Member_Id']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['Cost']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['State']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['Date_Time']."</li>";
-        echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.html','state_window',config='height=300,width=300')"." value= edit></input><br>";
-      }
+      include("OrderInformation.php");
       ?>
     </ul>
   </div>
+</div>
 
   <footer>
     <div class="footer-0">

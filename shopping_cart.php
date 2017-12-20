@@ -74,28 +74,7 @@ if(isset($_GET['delete']))
   </head>
 
   <body>
-    <div class="block">
-      <ul class="header__nav">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Product</a>
-          <ul>
-            <li><a href="#"  style="text-decoration:none;">Action</a></li>
-            <li><a href="#"  style="text-decoration:none;">Adventure</a></li>
-            <li><a href="#"  style="text-decoration:none;">Comedy</a></li>
-            <li><a href="#"  style="text-decoration:none;">Crime</a></li>
-            <li><a href="#"  style="text-decoration:none;">Horror</a></li>
-            <li><a href="#"  style="text-decoration:none;">Drama</a></li>
-            <li><a href="#"  style="text-decoration:none;">Science Fiction</a></li>
-            <li><a href="#"  style="text-decoration:none;">War</a></li>
-          </ul>
-        </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="signin.php">Sign in</a></li>
-        <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
-      </ul>
-    </div>
+    <?php include("MenuStrip.php"); ?>
 
     <div class="header">
       <div class="title">
@@ -132,6 +111,7 @@ if(isset($_GET['delete']))
             $shopping_cart=FindShoppingCart(GetSession());
             for($i=0;$i<count($shopping_cart);$i++)
             {
+              echo "!!!!!!!!!!!!".count($shopping_cart)."!!!!!!!!";
               $price="NT".$shopping_cart[$i]['Price'];
               echo "<li class="."create_box"."><p><img src=".$shopping_cart[$i]['Picture']."></p></li>";
               echo "<li class="."create_box"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
@@ -157,7 +137,7 @@ if(isset($_GET['delete']))
           <span  style= "display:block">Discount: </span>
           <span  style= "display:block">Grand Toyal: </span>
         </div>
-        <div class="button-check"><a href="#">Checkout</a></div>
+        <div class="button-check"><a href=<?php echo "Confirm.php" ?>>Checkout</a></div>
       </section>
     </div>
 

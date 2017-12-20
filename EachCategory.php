@@ -86,7 +86,7 @@ include('db.php');
 		<!-- //Slider -->
 		<!-- content-starts-here -->
 		<div class="container text-center mt-5">
-			  <div class="row  mt-5">
+			  <div class="row mt-5">
 					<?php
 					 $type= $_GET["type"];
 					 $dvd = GetDVDByCategory($type);
