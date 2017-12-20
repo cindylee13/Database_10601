@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-12-19 11:53:01
+-- 產生時間： 2017-12-20 14:13:58
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.11
 
@@ -181,7 +181,11 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`Id`, `Name`, `Password`, `Email`, `Phone`, `Sex`, `Birthday`, `ID_Card_Number`, `Status`) VALUES
-(1, 'name', 'password', 'email.imwmail', '0912345678', '1', '1995-02-27', 'f123456789', '1');
+(1, 'name', 'password', 'email@imwmail', '0912345678', '1', '1995-02-27', 'f123456789', '2'),
+(2, 'user', 'userpass', '123@123', '0923456788', '1', '1996-12-31', 'f1234566789', '0'),
+(3, 'qq', 'qq', 'qq@qq', 'q', '0', '1', 'f123312312', '0'),
+(4, '123', '123', 'manager@qq', '123', '1', '123', '123', '1'),
+(5, '123', 'test', 'test@test', '0912345678', '1', '1992/12/21', 'A111111111', '1');
 
 -- --------------------------------------------------------
 
@@ -197,6 +201,39 @@ CREATE TABLE `order_list` (
   `Date_Time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- 資料表的匯出資料 `order_list`
+--
+
+INSERT INTO `order_list` (`Id`, `Member_Id`, `Cost`, `State`, `Date_Time`) VALUES
+(1, 2, 1299, '0', '2017-12-01'),
+(2, 2, 1300, '0', '1996-11-12'),
+(3, 3, 1222, '0', '1996-11-11');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `order_list_dvd`
+--
+
+CREATE TABLE `order_list_dvd` (
+  `order_list_Id` int(11) NOT NULL,
+  `DVD_Id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 資料表的匯出資料 `order_list_dvd`
+--
+
+INSERT INTO `order_list_dvd` (`order_list_Id`, `DVD_Id`) VALUES
+(1, 44),
+(1, 78),
+(1, 62),
+(3, 44),
+(3, 64),
+(3, 44),
+(3, 64);
+
 -- --------------------------------------------------------
 
 --
@@ -207,8 +244,17 @@ CREATE TABLE `shopping_cart` (
   `Member_Id` int(11) NOT NULL,
   `DVD_Id` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
-) 
-ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `shopping_cart`
+--
+
+INSERT INTO `shopping_cart` (`Member_Id`, `DVD_Id`, `Quantity`) VALUES
+(2, 49, 2),
+(2, 8, 1),
+(2, 26, 1),
+(2, 41, 1);
 
 -- --------------------------------------------------------
 
@@ -358,6 +404,13 @@ ALTER TABLE `order_list`
   ADD KEY `Member_Id` (`Member_Id`);
 
 --
+-- 資料表索引 `order_list_dvd`
+--
+ALTER TABLE `order_list_dvd`
+  ADD KEY `order_list_dvd_ibfk_1` (`order_list_Id`),
+  ADD KEY `order_list_dvd_ibfk_2` (`DVD_Id`);
+
+--
 -- 資料表索引 `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
@@ -387,6 +440,13 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `order_list`
   ADD CONSTRAINT `order_list_ibfk_1` FOREIGN KEY (`Member_Id`) REFERENCES `member` (`Id`);
+
+--
+-- 資料表的 Constraints `order_list_dvd`
+--
+ALTER TABLE `order_list_dvd`
+  ADD CONSTRAINT `order_list_dvd_ibfk_1` FOREIGN KEY (`order_list_Id`) REFERENCES `order_list` (`Id`),
+  ADD CONSTRAINT `order_list_dvd_ibfk_2` FOREIGN KEY (`DVD_Id`) REFERENCES `dvd` (`Id`);
 
 --
 -- 資料表的 Constraints `shopping_cart`

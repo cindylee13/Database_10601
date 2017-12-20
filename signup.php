@@ -127,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign Up</h3>
-				<form action="AddMember.php"   method="post">
+				<form action=<?php echo "AddMember.php?status=0"; ?>   method="post">
 					<input type="text" name="Name" placeholder="Name" required="">
 					<input type="text" name="Email" placeholder="Email" required="">
 					<input type="text" name="tel" placeholder="Phone Number" required="">

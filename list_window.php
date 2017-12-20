@@ -26,7 +26,7 @@ $id=GetSession();
   else
     echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='stock.php'"." value= "."Go_Back"."></input>";
   ?>
-  <div class="table-product-0">
+  <div class="table-product-2">
     <ul>
       <li class="list-order">ID </li>
       <li class="list-order">Member_ID</li>
@@ -38,7 +38,7 @@ $id=GetSession();
     </ul>
   </div>
 
-  <div class="table-product-1">
+  <div class="table-product-3">
     <ul>
       <?php
       include("OrderInformation.php");

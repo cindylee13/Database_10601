@@ -40,10 +40,10 @@ function GetDVDByCategory($category)
     return $list_arr;
   }
 
-  function InsertMember($id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex)
+  function InsertMember($id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex,$status)
   {
     include 'Connect.php';
-    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber')";
+    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number,Status)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber','$status')";
     $r = $conn->query($sql);
   }
 
@@ -249,7 +249,7 @@ function GetStatus()
   $sql="select status from member where Id='$id'";
   $result=  $conn->query($sql);
   $i=0;
-  $list_arr=array();
+  $status=-1;
   while($rows= mysqli_fetch_array($result)){
     $status = $rows['status'];
    }
