@@ -157,7 +157,7 @@ if(isset($_GET['delete']))
           <span  style= "display:block">Discount: </span>
           <span  style= "display:block">Grand Toyal: </span>
         </div>
-        <div class="button-check"><a href="#">Checkout</a></div>
+        <div class="button-check"><a href=<?php echo "list_window.php?status=0" ?>>Checkout</a></div>
       </section>
     </div>
 

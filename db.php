@@ -199,4 +199,60 @@ function SearchDVDByName($name)
       return $list_arr[0]['Id'];
    return "-1";
 }
+
+function GetOrderListById($id)
+{
+  include 'Connect.php';
+  $sql="select * from order_list where Member_Id='$id'";
+  $result=  $conn->query($sql);
+  $list_arr=array();
+  $i=0;
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr;
+}
+
+function GetOrderList()
+{
+  include 'Connect.php';
+  $sql="select * from order_list";
+  $result=  $conn->query($sql);
+  $list_arr=array();
+  $i=0;
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr;
+}
+
+function GetDVDByOrderId($id)
+{
+  include 'Connect.php';
+  $sql="select DVD_Id from order_list_dvd where order_list_id='$id'";
+  $result=  $conn->query($sql);
+  $i=0;
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr;
+}
+
+function GetStatus()
+{
+  include 'Connect.php';
+  $id=GetSession();
+  $sql="select status from member where Id='$id'";
+  $result=  $conn->query($sql);
+  $i=0;
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $status = $rows['status'];
+   }
+  return $status;
+}
 ?>

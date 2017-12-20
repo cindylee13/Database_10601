@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 include("db.php");
+if(isset($_GET['status']))
+  $status=$_GET['status'];
+$id=GetSession();
 ?>
 <html lang="en">
 <link rel="stylesheet" href="css/stock.css">
@@ -34,15 +37,23 @@ include("db.php");
         <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
     </div><!--container-->
   </div>
+  <div class="container">
 
   <div class="head_text">
     <p>All of Order</p>
   </div>
-  <input class="goback-button" type ="button"  onclick="javascript:location.href='stock.php'" value= Go_Back></input>
+  <?php
+  $status=GetStatus();
+  if($status==0)
+    echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='index.php'"." value= "."Go_Index"."></input>";
+  else
+    echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='stock.php'"." value= "."Go_Back"."></input>";
+  ?>
   <div class="table-product-0">
     <ul>
-      <li class="list-order">ID</li>
+      <li class="list-order">ID </li>
       <li class="list-order">Member_ID</li>
+      <li class="list-order">DVD</li>
       <li class="list-order">Cost</li>
       <li class="list-order">state</li>
       <li class="list-order">Date_Time</li>
@@ -53,18 +64,11 @@ include("db.php");
   <div class="table-product-1">
     <ul>
       <?php
-      $order=GetOrderlist();
-      for ($i=0; $i <count($order) ; $i++) {
-        echo "<li class="."list-order".">".$order[$i]['Id']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['Member_Id']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['Cost']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['State']."</li>";
-        echo "<li class="."list-order".">".$order[$i]['Date_Time']."</li>";
-        echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.html','state_window',config='height=300,width=300')"." value= edit></input><br>";
-      }
+      include("OrderInformation.php");
       ?>
     </ul>
   </div>
+</div>
 
   <footer>
     <div class="footer-0">

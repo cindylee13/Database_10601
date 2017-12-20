@@ -48,9 +48,12 @@ include("db.php");
           <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
       </div>
     </div>
-    <input class="insert-button" type ="button" onclick="window.open('insert_window.php','edit_window',config='height=300,width=300')" value= insert-DVD></input>
+     <input class="insert-button"  type ="button" onclick="window.open('insert_window.php','edit_window',config='height=300,width=300')" value= insert-DVD></input>;
     <input class="search-button" type ="button" onclick="window.open('list_window.php','list_window',config='height=400,width=1400')" value= checking-order></input>
-    <input class="member-button" type ="button" onclick="window.open('people_window.php','people_window',config='height=400,width=400')" value= insert-member></input>
+    <?php
+    if(GetStatus()==2)
+      echo "<input class="."member-button"." type="."button"." onclick="."window.open('people_window.php','people_window',config='height=400,width=400')"." value= insert-member></input>";
+    ?>
     <div class="container">
       <section>
           <div class="table__title">

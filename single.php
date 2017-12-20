@@ -13,7 +13,6 @@ include('db.php');
 $id = @$_GET["Id"];
 function AddGoodsToCart()
 {
-  echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
   $id = @$_GET["Id"];
   $dvd = GetDvdInformation((int)$id);
   AddToCart($dvd['Id']);
