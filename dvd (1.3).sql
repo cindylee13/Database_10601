@@ -180,12 +180,12 @@ CREATE TABLE `member` (
 -- 資料表的匯出資料 `member`
 --
 
-INSERT INTO `member` (`Id`, `Name`, `Password`, `Email`, `Phone`, `Sex`, `Birthday`, `ID_Card_Number`, `Status`) VALUES
-(1, 'name', 'password', 'email@imwmail', '0912345678', '1', '1995-02-27', 'f123456789', '2'),
-(2, 'user', 'userpass', '123@123', '0923456788', '1', '1996-12-31', 'f1234566789', '0'),
-(3, 'qq', 'qq', 'qq@qq', 'q', '0', '1', 'f123312312', '0'),
-(4, '123', '123', 'manager@qq', '123', '1', '123', '123', '1'),
-(5, '123', 'test', 'test@test', '0912345678', '1', '1992/12/21', 'A111111111', '1');
+INSERT INTO `member` (`Id`, `Name`, `Password`, `Email`, `Phone`, `Sex`, `Birthday`, `Address`, `Status`) VALUES
+(1, 'name', 'password', 'email@imwmail', '0912345678', '1', '1995-02-27', 'taipei', '2'),
+(2, 'user', 'userpass', '123@123', '0923456788', '1', '1996-12-31', 'taipei', '0'),
+(3, 'qq', 'qq', 'qq@qq', 'q', '0', '1', 'taipei', '0'),
+(4, '123', '123', 'manager@qq', '123', '1', '123', 'taipei', '1'),
+(5, '123', 'test', 'test@test', '0912345678', '1', '1992/12/21', 'taipei', '1');
 
 -- --------------------------------------------------------
 
@@ -244,10 +244,6 @@ CREATE TABLE `shopping_cart` (
   `Member_Id` int(11) NOT NULL,
   `DVD_Id` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
-<<<<<<< HEAD
-)
-ENGINE=InnoDB DEFAULT CHARSET=utf8;
-=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -259,7 +255,6 @@ INSERT INTO `shopping_cart` (`Member_Id`, `DVD_Id`, `Quantity`) VALUES
 (2, 8, 1),
 (2, 26, 1),
 (2, 41, 1);
->>>>>>> origin/master
 
 -- --------------------------------------------------------
 
