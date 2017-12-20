@@ -2,6 +2,22 @@
 <?php
 include("db.php");
 $id=GetSession();
+$cart=FindShoppingCart($id);
+$price=0;
+for($i=0;$i<count($cart);$i++)
+{
+  $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
+  $price+= $dvd['Price'];
+  $quantity=$cart[$i]['Quantity'];
+}
+$Date_Time = date("Y-m-d");
+$max=InsertOrderList(GetSession(),$price,'0',$Date_Time);
+for($i=0;$i<count($cart);$i++)
+{
+  $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
+  InsertOrderListDVD($max,$dvd['Id']);
+}
+DeleteCart($id);
 ?>
 <html lang="en">
 <link rel="stylesheet" href="css/stock.css">

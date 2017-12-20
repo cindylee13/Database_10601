@@ -111,6 +111,7 @@ if(isset($_GET['delete']))
             $shopping_cart=FindShoppingCart(GetSession());
             for($i=0;$i<count($shopping_cart);$i++)
             {
+              echo "!!!!!!!!!!!!".count($shopping_cart)."!!!!!!!!";
               $price="NT".$shopping_cart[$i]['Price'];
               echo "<li class="."create_box"."><p><img src=".$shopping_cart[$i]['Picture']."></p></li>";
               echo "<li class="."create_box"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
@@ -136,7 +137,7 @@ if(isset($_GET['delete']))
           <span  style= "display:block">Discount: </span>
           <span  style= "display:block">Grand Toyal: </span>
         </div>
-        <div class="button-check"><a href=<?php echo "list_window.php" ?>>Checkout</a></div>
+        <div class="button-check"><a href=<?php echo "Confirm.php" ?>>Checkout</a></div>
       </section>
     </div>
 
