@@ -42,26 +42,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<!-- Navigation -->
   <?php include("MenuStrip.php"); ?>
-		<!-- //Navigation -->
-	<!-- header -->
-  <header>
-    <div class="w3ls-header"><!--header-one-->
-      <div class="w3ls-header-right">
-        <ul>
-          <li class="dropdown head-dpdn">
-            <a href="index.php" aria-expanded="false"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="clearfix"> </div>
-    </div>
-
-			<div class="clearfix"> </div>
-		</div>
-	</header>
-	<!-- //header -->
-	<!-- sign in form -->
 	 <section>
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">

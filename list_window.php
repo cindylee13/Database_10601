@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <?php
 include("db.php");
-if(isset($_GET['status']))
-  $status=$_GET['status'];
 $id=GetSession();
 ?>
 <html lang="en">
 <link rel="stylesheet" href="css/stock.css">
 <link rel="stylesheet" href="css/common.css">
 <body>
-  <div class="block">
-    <ul class="header__nav">
-      <li><a href="#">News</a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Product</a>
-        <ul>
-          <li><a href="#"  style="text-decoration:none;">Action</a></li>
-          <li><a href="#"  style="text-decoration:none;">Adventure</a></li>
-          <li><a href="#"  style="text-decoration:none;">Comedy</a></li>
-          <li><a href="#"  style="text-decoration:none;">Crime</a></li>
-          <li><a href="#"  style="text-decoration:none;">Horror</a></li>
-          <li><a href="#"  style="text-decoration:none;">Drama</a></li>
-          <li><a href="#"  style="text-decoration:none;">Science Fiction</a></li>
-          <li><a href="#"  style="text-decoration:none;">War</a></li>
-        </ul>
-      </li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact us</a></li>
-      <li><a href="signin.php">Sign in</a></li>
-      <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
-    </ul>
-  </div>
+<?php include("MenuStrip.php"); ?>
 
   <div class="header">
     <div class="title">
