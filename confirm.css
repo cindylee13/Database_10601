@@ -1,0 +1,21 @@
+.confirm_table{
+  Xwidth: 100%;
+  height:auto;
+  margin-left:35%;
+}
+.confirm_table_list{
+  width: 400px;
+  height:300px;
+  border-style:solid;
+}
+.confirm_table_list p{
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+}
+.confirm_table_list ul{
+  list-style: none;
+}
+.right{
+  margin-left: 40px;
+}
