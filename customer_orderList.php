@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+include("db.php");
+$id=GetSession();
+$order=GetOrderListById($id);
+$price=0;
+?>
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,18 +50,34 @@
 
           <ul class="backstage__user__record__intro__filed__name">
             <li class="backstage__user__record__intro__one"><a>DVD</a></li>
-            <li class="backstage__user__record__intro__two"><a>Quantity</a></li>
             <li class="backstage__user__record__intro__three"><a>Price</a></li>
             <li class="backstage__user__record__intro__four"><a>State</a></li>
           </ul>
 
-          <div class="backstage__user__record__line"></div>
-          <ul class="backstage__user__record__intro__row">
-            <li class="backstage__user__record__intro__one"></li>
-            <li class="backstage__user__record__intro__two"></li>
-            <li class="backstage__user__record__intro__three"></li>
-            <li class="backstage__user__record__intro__four"></li>
-          </ul>
+            <?php
+            for($i=0;$i<count($order);$i++):
+              $names='';
+              $state='';
+                  $dvd_Id=GetDVDByOrderId($order[$i]['Id']);
+                      for($j=0;$j<count($dvd_Id);$j++)
+                      {
+                        $dvd=GetDvdInformation($dvd_Id[$j]['DVD_Id']);
+                        $names = $names.$dvd['Name'].'<br>';
+                      }
+                 if($order[$i]['State']==0)
+                    $state='Shipping';
+                 else if($order[$i]['State']==1)
+                    $state='Processing';
+                 else
+                    $state='received';
+            ?>
+            <div class="backstage__user__record__line"></div>
+            <ul class="backstage__user__record__intro__row">
+            <li class="backstage__user__record__intro__one"><?= $names ?></li>
+            <li class="backstage__user__record__intro__three"><?=$order[$i]['Cost']?></li>
+            <li class="backstage__user__record__intro__four"><?=$state?></li>
+            </ul>
+            <?php endfor ?>
 
           <div class="backstage__user__record__line"></div>
 

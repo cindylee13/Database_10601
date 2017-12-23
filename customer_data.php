@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<?php
+include("db.php");
+$id=GetSession();
+$member=GetMember($id);
+$name=$member['Name'];
+$address=$member['Address'];
+$email=$member['Email'];
+$sex=$member['Sex'];
+$birth=$member['Birthday'];
+$phone=$member['Phone'];
+if($sex==0)
+  $sex='女';
+else
+  $sex='男';
+$birth=str_replace("\r\n","",$birth);
+?>
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,11 +63,11 @@
       </div>
       <div class="backstage__user__data__person__list">
         <ul>
-          <li class="backstage__user__data__person__list__box">Name:</li>
-          <li class="backstage__user__data__person__list__box">Sex:</li>
-          <li class="backstage__user__data__person__list__box">Bithday:</li>
-          <li class="backstage__user__data__person__list__box">Email:</li>
-          <li class="backstage__user__data__person__list__box">Phone:</li>
+          <li class="backstage__user__data__person__list__box">Name:<b><?= $name ?></b></li>
+          <li class="backstage__user__data__person__list__box">Sex:<b ><?= $sex ?></b></li>
+          <li class="backstage__user__data__person__list__box">Bithday:<b><?= $birth ?></b></li>
+          <li class="backstage__user__data__person__list__box">Email:<b><?= $email ?></b></li>
+          <li class="backstage__user__data__person__list__box">Phone:<b><?= $phone ?></b></li>
         </ul>
       </div>
 

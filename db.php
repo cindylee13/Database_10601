@@ -288,4 +288,18 @@ function DeleteCart($id)
   $sql = "delete from shopping_cart where Member_Id='$id'";
   $result=  $conn->query($sql);
 }
+
+function GetMember($id)
+{
+  include 'Connect.php';
+  $sql="select * from member where Id='$id'";
+  $result = $conn->query($sql);
+  $i=0;
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr[0];
+}
 ?>

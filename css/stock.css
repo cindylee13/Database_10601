@@ -102,6 +102,11 @@ button{
   display: inline-block;
   padding-left:100px;
 }
+.table-product-2{
+  width: 100%;
+  display: inline-block;
+  padding-left:100px;
+}
 .goback-button{
   width: 15%;
   height: 40px;
@@ -110,6 +115,16 @@ button{
   margin-left: 140px;
 }
 .table-product-0 ul li{
+  width:200px;
+  height:100px;
+  float:left;
+  list-style-type: none;
+  font-size: 20px;
+  text-align: center;
+  background-color: #1C1C1C;
+  color: white;
+}
+.table-product-2 ul li{
   width:200px;
   height:100px;
   float:left;
@@ -128,8 +143,22 @@ button{
   text-align: center;
   background-color:#FFECC9;
 }
+.table-product-3 ul li{
+  width:200px;
+  height:100px;
+  float:left;
+  list-style-type: none;
+  font-size: 20px;
+  text-align: center;
+  background-color:#FFECC9;
+}
 .table-product-1{
   width: 70%;
+  padding-left:100px;
+  display: inline-block;
+}
+.table-product-3{
+  width: 50%;
   padding-left:100px;
   display: inline-block;
 }

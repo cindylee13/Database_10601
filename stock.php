@@ -11,17 +11,14 @@ include("db.php");
  ?>
 <html lang="en">
   <head>
-
     <meta charset="utf-8">
     <title>DVD Stock</title>
     <link rel="stylesheet" href="css/stock.css">
     <link rel="stylesheet" href="css/common.css">
-
   </head>
   <body>
 
     <?php include("MenuStrip.php"); ?>
-
     <div class="header">
       <div class="title">
           <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
