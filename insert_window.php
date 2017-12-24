@@ -27,7 +27,7 @@ if(isset($_POST['insert']))
     Actor：<input type="text" name="actor"><BR>
     Price：<input type="text" name="price"><BR>
     Quantity：<input type="text" name="quantity"><BR>
-    <input type="submit" name="submit" value="Cancel">
+    <input type="submit" name="submit" value="Cancel" onclick="window.close();">
     <input type="submit" name="insert" value="Confirm">
     </form>
   </div>

@@ -10,11 +10,13 @@
   </div>
 
   <div class="fix-product">
-    <form>state：
+    <form method="POST">
       <form class="select-state">
         <select name="state">
-        　<option value="process">處理中</option>
-        　<option value="shipping">出貨中</option>
+          <option value="received">Received</option>
+        　<option value="processing">Processing</option>
+        　<option value="shipping">Shipping</option>
+          <option value="closed">Closed</option>
         </select>
       </form>
   </form>

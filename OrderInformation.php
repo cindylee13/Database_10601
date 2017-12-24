@@ -20,7 +20,8 @@ for ($i=0; $i <count($order) ; $i++) {
   else if($order[$i]['State']==1)
     echo "<li class="."list-order".">"."已收貨"."</li>";
   echo "<li class="."list-order".">".$order[$i]['Date_Time']."</li>";
+  $order_id=$i+1;
   if(GetStatus()!=0)
-    echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.html','state_window',config='height=300,width=300')"." value= edit></input><br>";
+    echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.php?=$order_id','state_window',config='height=300,width=300')"." value= edit></input><br>";
 }
 ?>

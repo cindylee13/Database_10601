@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <?php
 include("db.php");
-/*for($i=2;$i<=96;$i++)
+/*
+for($i=1;$i<=96;$i++)
 {
   $dvd=GetDvdInformation($i);
   echo $dvd['Id'],",,",$dvd['Id'],",,",rand(0,5),",,,",$dvd['Price'];
   AddStroage(1,$dvd['Id'],rand(0,5),$dvd['Price']);
-}
-*/
+}*/
  ?>
 <html lang="en">
   <head>
@@ -50,6 +50,7 @@ include("db.php");
             $stroge=GetStroge();
             for($i=0;$i<count($stroge);$i++)
             {
+              $Id=$i+1;
               echo  "<li class="."list".">".$stroge[$i]['DVD_Id']."</li>";
               echo  "<li class="."list".">".GetDvdInformation($stroge[$i]['DVD_Id'])['Name']."</li>";
               echo  "<li class="."list".">".$stroge[$i]['Cost']."</li>";
@@ -58,7 +59,7 @@ include("db.php");
                 echo  "<li class="."list".">"."Exist"."</li>";
               else
                 echo  "<li class="."list".">"."Not Exist"."</li>";
-              echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('edit_window.php','edit_window',config='height=300,width=300')"." value= edit></input><br>";
+              echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('edit_window.php?Id=$Id',config='height=300,width=300')"." value= edit></input><br>";
             }
             ?>
             </ul>

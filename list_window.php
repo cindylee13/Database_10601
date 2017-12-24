@@ -42,7 +42,7 @@ DeleteCart($id);
   else
     echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='stock.php'"." value= "."Go_Back"."></input>";
   ?>
-  <div class="table-product-2">
+  <div class="table-product-0">
     <ul>
       <li class="list-order">ID </li>
       <li class="list-order">Member_ID</li>
@@ -54,7 +54,7 @@ DeleteCart($id);
     </ul>
   </div>
 
-  <div class="table-product-3">
+  <div class="table-product-1">
     <ul>
       <?php
       include("OrderInformation.php");

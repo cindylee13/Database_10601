@@ -302,4 +302,18 @@ function GetMember($id)
    }
   return  $list_arr[0];
 }
+
+function GetStrogeByDVD($dvd_id)
+{
+  include 'Connect.php';
+  $sql="select * from stroge_list where DVD_Id='$dvd_id'";
+  $result = $conn->query($sql);
+  $i=0;
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr[0];
+}
 ?>
