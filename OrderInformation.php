@@ -16,9 +16,13 @@ for ($i=0; $i <count($order) ; $i++) {
   echo "<li class="."list-order"."> ".$name."<br>"."</li>";
   echo "<li class="."list-order".">".$order[$i]['Cost']."</li>";
   if($order[$i]['State']==0)
-    echo "<li class="."list-order".">"."出貨中"."</li>";
+    echo "<li class="."list-order".">"."Processing"."</li>";
   else if($order[$i]['State']==1)
-    echo "<li class="."list-order".">"."已收貨"."</li>";
+    echo "<li class="."list-order".">"."Shipping"."</li>";
+  else if($order[$i]['State']==2)
+    echo "<li class="."list-order".">"."Received"."</li>";
+  else if($order[$i]['State']==3)
+    echo "<li class="."list-order".">"."Closed"."</li>";
   echo "<li class="."list-order".">".$order[$i]['Date_Time']."</li>";
   $order_id=$i+1;
   if(GetStatus()!=0)

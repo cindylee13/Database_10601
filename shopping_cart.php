@@ -111,13 +111,13 @@ if(isset($_GET['delete']))
             $shopping_cart=FindShoppingCart(GetSession());
             for($i=0;$i<count($shopping_cart);$i++)
             {
-              echo "!!!!!!!!!!!!".count($shopping_cart)."!!!!!!!!";
               $price="NT".$shopping_cart[$i]['Price'];
+              $total=$shopping_cart[$i]['Price']*$shopping_cart[$i]['Quantity'];
               echo "<li class="."create_box"."><p><img src=".$shopping_cart[$i]['Picture']."></p></li>";
               echo "<li class="."create_box"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
               echo "<li class="."create_box".">".$price."</li>";
               echo "<li class="."create_box".">".$shopping_cart[$i]['Quantity']."</li>";
-              echo "<li class="."create_box".">500</li>";
+              echo "<li class="."create_box".">".$total."</li>";
               echo "<li class="."create_box"."><a href="."shopping_cart.php?delete=".$shopping_cart[$i]['Id']."><img src=images/rubbish-bin.png></li>";
             }
             ?>
