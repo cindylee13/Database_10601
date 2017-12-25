@@ -1,0 +1,294 @@
+
+.backstage__user__common__list{
+  width: 330px;
+  margin: 0px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.backstage__user__common__list__title{
+  width: 330px;
+  background-color: #373A3F;
+  color: white;
+  text-align: center;
+  margin: 0px;
+}
+.backstage__user__common__list__title p{
+  margin: 0px;
+  font-size: 25px;
+  font-family: Microsoft JhengHei;
+}
+.backstage__user__common__list__choice{
+  width: 330px;
+  margin: 0px;
+  text-align: center;
+}
+.backstage__user__common__list__choice__title{
+  width: 330px;
+  text-decoration: none;
+  display:block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-family:Microsoft JhengHei;
+  color: black;
+  Xbackground-color:#E8C547;
+  background-color: #FFEDAB;
+}
+.backstage__user__common__list__choice__title:hover{
+  position:relative;
+  top:2px;
+  left:2px;
+}
+.backstage__user__common__FB,.backstage__user__common__youtube{
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+*{
+  Xborder: 1px solid black;
+}
+.blank{
+  height: 50px;
+}
+/*---------===========-紀錄------------------------*/
+
+.backstage__user__record__intro{
+  width:780px;
+  display:block;
+  float: right;
+  margin-right: 30px;
+}
+.backstage__user__record__intro__filed__name{
+  margin: 0px;
+  background-color: #373A3F;
+}
+.backstage__user__record__intro__filed__name li{
+  display:inline-block;
+}
+.one{
+  width:220px;
+  margin-left: 30px;
+}
+.two{
+  width:80px;
+  margin-left: 10px;
+  text-align: center;
+  margin-right: 30px;
+}
+.backstage__user__record__intro__filed__name a{
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+}
+.backstage__user__record__line{
+  border-bottom: 2px solid black;
+  border-width:thin;
+}
+.backstage__user__record__intro__row{
+  margin: 0px;
+  background-color: #E2E4F6;
+}
+.backstage__user__record__intro__row li{
+  display: inline-block;
+
+}
+.backstage__user__record__intro__row:hover{
+  background-color: #1D3461;
+  color: white;
+}
+.backstage__user__record__intro__one{
+  width:220px;
+  text-align: left;
+  display: inline-block;
+  margin: 15px 0px 15px 30px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.backstage__user__record__intro__two,
+.backstage__user__record__intro__three{
+  width: 80px;
+  text-align: center;
+  display: inline-block;
+  margin: 15px 30px 15px 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.backstage__user__record__intro__four{
+  width: 80px;
+  text-align:center;
+  display: inline-block;
+  margin: 15px 30px 15px 10px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.backstage__user__record__intro__three{
+  position:relative;
+  bottom:  30px;
+}
+
+/*=====================個資====================*/
+p{
+  margin: 0px;
+}
+.backstage__user__data__person{
+  float: right;
+  width: 780px;
+  display: block;
+  margin-right: 30px;
+}
+.backstage__user__data__person__title{
+  background-color: #373A3F;
+  color: white;
+  font-size: 25px;
+  margin: 0px 0px 10px 0px;
+}
+.backstage__user__data__person__title p{
+   margin-left: 20px;
+}
+.backstage__user__data__person__list{
+  display:inline-block;
+  width: 25%;
+  margin: 20px 0px 0px 0px;
+  Xtext-align: right;
+
+}
+.backstage__user__data__person__list__box{
+  height: 70px;
+  width: 50%;
+  list-style: none;
+  font-size: 20px;
+
+}
+.backstage__user__data__person__list__button {
+  Xmargin-left: 600px;
+  margin-top: 50px;
+  text-align: center;
+}
+.backstage__user__data__person__list__button a{
+  text-decoration: none;
+  border:#1D3461 1px solid;
+  padding: 5px;
+  color: black;
+}
+.backstage__user__data__person__list__button a:hover {
+  background-color: #373A3F;
+  color: white;
+}
+/*====================payment======================*/
+.backstage__user__payment{
+  float: right;
+  width: 780px;
+  display: block;
+}
+.backstage__user__payment__status{
+  display:inline-block;
+  margin:5px 0px 30px 0px;
+}
+.backstage__user__payment__list{
+  font-size: 20px;
+  background-color: #373A3F;
+  color: white;
+  margin: 0px;
+}
+.backstage__user__payment__list__one,.backstage__user__payment__list__two,.backstage__user__payment__list__three{
+  width: 20%;
+  text-align: left;
+  display: inline-block;
+  margin: 5px 0px 5px 60px;
+}
+.backstage__user__payment__list__box{
+  background-color: #E2E4F6;
+  margin: 0px;
+}
+.backstage__user__payment__list__box:hover{
+  background-color: #1D3461;
+  color: white;
+}
+.dropdown-menu {
+  position: relative;
+}
+
+.dropdown-menu > span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.dropdown-menu > span,
+.dropdown-menu > div {
+  cursor: pointer;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.dropdown-menu > div {
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.dropdown-menu > span:focus ~ div {
+  display: block;
+}
+
+.dropdown-menu > ul {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  transition: visibility 0.5s;
+  opacity: 0;
+}
+
+.dropdown-menu > span:focus ~ ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* The .sample-menu-style below is for illustration purpose.
+   Feel free to use different style. */
+.sample-menu-style > span {
+  font: 100% Arial;
+  color: darkgreen;
+}
+
+.sample-menu-style > span:hover {
+  opacity: 0.75;
+}
+
+.sample-menu-style > ul {
+  padding: 0;
+  margin-top: 2px;
+}
+
+.sample-menu-style li {
+  display: block;
+  border: 1px solid #bbb;
+  box-shadow: 2px 2px 5px #ccc;
+  padding: 0.2em 0.4em 0;
+  height: 1.5em;
+  background: #fffffb;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.sample-menu-style li:not(:first-child) {
+  border-top: none;
+}
+
+.sample-menu-style li:hover {
+  background: #f8f8f4;
+}
+
+.sample-menu-style a {
+  text-decoration: none;
+  color: #555;
+}
+/*=============paymeny_finish=======================*/
+.backstage__user__payment__status_finish{
+  Xfloat: right;
+}

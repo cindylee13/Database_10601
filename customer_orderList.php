@@ -49,10 +49,11 @@ $price=0;
       <div class="backstage__user__record__intro">
 
           <ul class="backstage__user__record__intro__filed__name">
-            <li class="backstage__user__record__intro__one"><a>DVD</a></li>
-            <li class="backstage__user__record__intro__three"><a>Price</a></li>
-            <li class="backstage__user__record__intro__four"><a>State</a></li>
-            <li class="backstage__user__record__intro__four"><a>Quantity</a></li>
+            <li class="one"><a>DVD</a></li>
+            <li class="two"><a>Price</a></li>
+            <li class="two"><a>State</a></li>
+            <li class="two"><a>Quantity</a></li>
+            <li class="two"><a>Total</a></li>
           </ul>
 
             <?php
@@ -61,6 +62,7 @@ $price=0;
               $state='';
               $price='';
               $quantity='';
+              $total=0;
                   $dvd_Id=GetDVDByOrderId($order[$i]['Id']);
                   for($j=0;$j<count($dvd_Id);$j++)
                   {
@@ -68,6 +70,7 @@ $price=0;
                     $names = $names.$dvd['Name'].'<br>';
                     $price = $price.$dvd['Price'].'<br>';
                     $quantity =  $quantity.$dvd_Id[$j]['Quantity'].'<br>';
+                    $total = $dvd['Price'] + $total;
                   }
                  if($order[$i]['State']==0)
                     $state='Shipping';
@@ -80,9 +83,10 @@ $price=0;
             <div class="backstage__user__record__sline"></div>
             <ul class="backstage__user__record__intro__row">
             <li class="backstage__user__record__intro__one"><?= $names ?></li>
-            <li class="backstage__user__record__intro__two"><?=$price?></li>
+            <li class="backstage__user__record__intro__two"><?= $price?></li>
             <li class="backstage__user__record__intro__three"><?=$state?></li>
-            <li class="backstage__user__record__intro__three"><?=$quantity?></li>
+            <li class="backstage__user__record__intro__four"><?=$quantity?></li>
+            <li class="backstage__user__record__intro__three"><?=$total?></li>
             </ul>
             <?php endfor ?>
 

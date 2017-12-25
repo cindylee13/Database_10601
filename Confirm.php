@@ -19,6 +19,11 @@ if(isset($_POST['confirm']))
   <div class="confirm_table">
     <div class="confirm_table_list">
       <p>List Information</p>
+      <ul>
+        <li class="color">DVD</li>
+        <li class="color">Quantity</li>
+        <li class="color">Price</li>
+      </ul>
       <?php
       $price=0;
       $quantity=0;
@@ -28,20 +33,25 @@ if(isset($_POST['confirm']))
           $quantity+=$cart[$i]['Quantity'];
         ?>
         <ul>
-        <li>DVD:<?= $dvd['Name'] ?></li>
-        <li>Quantity:<?= $cart[$i]['Quantity']?></li>
-        <li>Price:<?= $dvd['Price'] ?></li>
-        <li>T_Quantity:<?= $quantity ?></li>
-        <li>total:<?= $price ?></li>
+        <li><?= $dvd['Name'] ?></li>
+        <li><?= $cart[$i]['Quantity']?></li>
+        <li><?= $dvd['Price'] ?></li>
+
        </ul>
+
     <?php endfor; ?>
-      </div>
+    <ul>
+      <li class="color">Total_Quantity:<?= $quantity ?></li>
+      <li class="color">Total:NT<?= $price ?></li>
+    </ul>
+
 
       <div class="right">
         <a href="InsertOrder.php"><button type="submit" name="confirm">Confirm</button></a>
         <a href="shopping_cart.php"><button type="button" name="Cancel">Cancel</button></a>
       </div>
 
+      </div>
     </div>
 
 
