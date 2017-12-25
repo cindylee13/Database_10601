@@ -7,7 +7,7 @@ $price=0;
 for($i=0;$i<count($cart);$i++)
 {
   $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
-  $price+= $dvd['Price'];
+  $price += $dvd['Price'];
   $quantity=$cart[$i]['Quantity'];
 }
 $Date_Time = date("Y-m-d");

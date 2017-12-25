@@ -17,7 +17,7 @@ $id=$_GET["Id"];
     <?php $dvd=GetDvdInformation($id);
           $stroge=GetStrogeByDVD($id);
     ?>
-    <form method="POST"  <?php echo "action="."change.php?Id=".$id; ?> >
+    <form method="POST"  <?php echo "action="."stroge_change.php?Id=".$id; ?> >
     Name：<?= $dvd['Name'] ?><br>
     Price：<input type="text" name="price" value=<?= $dvd['Price'] ?>><br>
     Quantity：<input type="text" name="quantity" value=<?= $stroge['Quantity'] ?>><br>

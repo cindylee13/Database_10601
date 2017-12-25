@@ -161,7 +161,6 @@ function InsertDVD($name,$picture,$publisher,$introduction,$category,$date,$leve
 {
   include 'Connect.php';
   $id = FindMax('dvd') + 1;
-  ECHO $id,$name,$picture,$publisher,$introduction,$category,$date,$level,$time,$actor,$price;
   $sql = "Insert into dvd(Id,Name,Picture,Publisher,Introduction,Category,Publish_Date,Level,Time,Actor,Price) Value('$id','$name','$picture','$publisher','$introduction','$category','$date','$level','$time','$actor','$price')";
   $result=  $conn->query($sql);
   $Date_Time = date("Y-m-d");
@@ -267,27 +266,6 @@ function GetStatus()
   return $status;
 }
 
-function InsertOrderList($id,$price,$state,$Date_Time)
-{
-  include 'Connect.php';
-  $max=FindMax('order_list');
-  $sql="Insert into order_list(Id,Member_Id,Cost,State,Date_Time) VALUES('$max','$id','$price','$state','$Date_Time')";
-  $result=  $conn->query($sql);
-  return $max;
-}
-function InsertOrderListDVD($max,$dvd_id)
-{
-  include 'Connect.php';
-  $sql="Insert into order_list_dvd(order_list_id,DVD_Id) VALUES('$max','$dvd_id')";
-  $result=  $conn->query($sql);
-}
-
-function DeleteCart($id)
-{
-  include 'Connect.php';
-  $sql = "delete from shopping_cart where Member_Id='$id'";
-  $result=  $conn->query($sql);
-}
 
 function GetMember($id)
 {

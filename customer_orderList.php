@@ -52,17 +52,20 @@ $price=0;
             <li class="backstage__user__record__intro__one"><a>DVD</a></li>
             <li class="backstage__user__record__intro__three"><a>Price</a></li>
             <li class="backstage__user__record__intro__four"><a>State</a></li>
+            <li class="backstage__user__record__intro__four"><a>Quantity</a></li>
           </ul>
 
             <?php
             for($i=0;$i<count($order);$i++):
               $names='';
               $state='';
+              $price='';
                   $dvd_Id=GetDVDByOrderId($order[$i]['Id']);
                       for($j=0;$j<count($dvd_Id);$j++)
                       {
                         $dvd=GetDvdInformation($dvd_Id[$j]['DVD_Id']);
                         $names = $names.$dvd['Name'].'<br>';
+                        $price = $price.$dvd['Price'].'<br>';
                       }
                  if($order[$i]['State']==0)
                     $state='Shipping';
@@ -70,12 +73,13 @@ $price=0;
                     $state='Processing';
                  else
                     $state='received';
+                    //total price = $order[$i]['Cost'];
             ?>
-            <div class="backstage__user__record__line"></div>
+            <div class="backstage__user__record__sline"></div>
             <ul class="backstage__user__record__intro__row">
             <li class="backstage__user__record__intro__one"><?= $names ?></li>
-            <li class="backstage__user__record__intro__three"><?=$order[$i]['Cost']?></li>
-            <li class="backstage__user__record__intro__four"><?=$state?></li>
+            <li class="backstage__user__record__intro__two"><?=$price?></li>
+            <li class="backstage__user__record__intro__three"><?=$state?></li>
             </ul>
             <?php endfor ?>
 

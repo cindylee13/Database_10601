@@ -3,6 +3,8 @@
 include("db.php");
 $id=GetSession();
 $cart=GetCartByID($id);
+if(isset($_POST['confirm']))
+  echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
 ?>
 <html lang="en">
 <head>
@@ -24,7 +26,7 @@ $cart=GetCartByID($id);
         <?php
         for($i=0;$i<count($cart);$i++):
           $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
-          $price += $dvd['Price'];
+          $price += $dvd['Price']*$cart[$i]['Quantity'];
           $quantity+=$cart[$i]['Quantity'];
         ?>
         <ul>
@@ -38,7 +40,7 @@ $cart=GetCartByID($id);
       </div>
 
       <div class="right">
-        <a href="index.php"><button type="button" name="confirm">Confirm</button></a>
+        <a href="InsertOrder.php"><button type="submit" name="confirm">Confirm</button></a>
         <a href="shopping_cart.php"><button type="button" name="Cancel">Cancel</button></a>
       </div>
 
