@@ -60,13 +60,15 @@ $price=0;
               $names='';
               $state='';
               $price='';
+              $quantity='';
                   $dvd_Id=GetDVDByOrderId($order[$i]['Id']);
-                      for($j=0;$j<count($dvd_Id);$j++)
-                      {
-                        $dvd=GetDvdInformation($dvd_Id[$j]['DVD_Id']);
-                        $names = $names.$dvd['Name'].'<br>';
-                        $price = $price.$dvd['Price'].'<br>';
-                      }
+                  for($j=0;$j<count($dvd_Id);$j++)
+                  {
+                    $dvd=GetDvdInformation($dvd_Id[$j]['DVD_Id']);
+                    $names = $names.$dvd['Name'].'<br>';
+                    $price = $price.$dvd['Price'].'<br>';
+                    $quantity =  $quantity.$dvd_Id[$j]['Quantity'].'<br>';
+                  }
                  if($order[$i]['State']==0)
                     $state='Shipping';
                  else if($order[$i]['State']==1)
@@ -80,6 +82,7 @@ $price=0;
             <li class="backstage__user__record__intro__one"><?= $names ?></li>
             <li class="backstage__user__record__intro__two"><?=$price?></li>
             <li class="backstage__user__record__intro__three"><?=$state?></li>
+            <li class="backstage__user__record__intro__three"><?=$quantity?></li>
             </ul>
             <?php endfor ?>
 

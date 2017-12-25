@@ -22,8 +22,6 @@ if(isset($_POST['confirm']))
       <?php
       $price=0;
       $quantity=0;
-      ?>
-        <?php
         for($i=0;$i<count($cart);$i++):
           $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
           $price += $dvd['Price']*$cart[$i]['Quantity'];

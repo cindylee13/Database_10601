@@ -14,6 +14,20 @@ function GetDVDByCategory($category)
    return $list_arr;
  }
 
+ function GetAllDVD()
+ {
+   include 'Connect.php';
+   $sql="select * from dvd";
+   $result=  $conn->query($sql);
+   $i=0;
+   $list_arr=array();
+   while($rows= mysqli_fetch_array($result)){
+     $list_arr[$i]=$rows;
+     $i++;
+    }
+    return $list_arr;
+  }
+
  function GetName($category)
  {
    include 'Connect.php';
@@ -43,7 +57,7 @@ function GetDVDByCategory($category)
   function InsertMember($id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex,$status)
   {
     include 'Connect.php';
-    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number,Status)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber','$status')";
+    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,Address,Status)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber','$status')";
     $r = $conn->query($sql);
   }
 
@@ -241,7 +255,7 @@ function GetOrderList()
 function GetDVDByOrderId($id)
 {
   include 'Connect.php';
-  $sql="select DVD_Id from order_list_dvd where order_list_id='$id'";
+  $sql="select * from order_list_dvd where order_list_id='$id'";
   $result=  $conn->query($sql);
   $i=0;
   $list_arr=array();

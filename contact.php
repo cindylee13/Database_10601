@@ -62,17 +62,7 @@ include('db.php');
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <div class="block">
-      <ul class="header__nav">
-        <li><a href="#">News</a></li>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="contact.php">Contact us</a></li>
-        <li><a href="signin.php">Sign in</a></li>
-        <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
-      </ul>
-    </div>
+    <?php include("MenuStrip.php"); ?>
 
     <div class="header">
       <div class="title">
