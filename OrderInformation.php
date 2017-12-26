@@ -24,8 +24,7 @@ for ($i=0; $i <count($order) ; $i++) {
   else if($order[$i]['State']==3)
     echo "<li class="."list-order".">"."Closed"."</li>";
   echo "<li class="."list-order".">".$order[$i]['Date_Time']."</li>";
-  $order_id=$i+1;
   if(GetStatus()!=0)
-    echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.php?=$order_id','state_window',config='height=300,width=300')"." value= edit></input><br>";
+    echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.php?Id=$i','state_window',config='height=300,width=300')"." value= edit></input><br>";
 }
 ?>

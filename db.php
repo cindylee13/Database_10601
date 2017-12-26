@@ -309,11 +309,10 @@ function GetStrogeByDVD($dvd_id)
   return  $list_arr[0];
 }
 
-/*function UpdateState($state,$id)
+function UpdateState($state,$id)
 {
   include 'Connect.php';
-  UPDATE `order_list` SET `Id`=[value-1],`Member_Id`=[value-2],`Cost`=[value-3],`State`=[value-4],`Date_Time`=[value-5] WHERE 1
   $sql="UPDATE order_list SET State='$state' where Id='$id'";
   $result = $conn->query($sql);
-}*/
+}
 ?>
