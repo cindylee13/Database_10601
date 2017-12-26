@@ -14,6 +14,20 @@ function GetDVDByCategory($category)
    return $list_arr;
  }
 
+ function GetAllDVD()
+ {
+   include 'Connect.php';
+   $sql="select * from dvd";
+   $result=  $conn->query($sql);
+   $i=0;
+   $list_arr=array();
+   while($rows= mysqli_fetch_array($result)){
+     $list_arr[$i]=$rows;
+     $i++;
+    }
+    return $list_arr;
+  }
+
  function GetName($category)
  {
    include 'Connect.php';
@@ -43,7 +57,7 @@ function GetDVDByCategory($category)
   function InsertMember($id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex,$status)
   {
     include 'Connect.php';
-    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,ID_Card_Number,Status)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber','$status')";
+    $sql ="INSERT INTO member(Id,Name,Password,Email,Phone,Sex,Birthday,Address,Status)  VALUES ('$id','$Name','$Password','$Email','$tel','$Sex','$Birthday','$IDNumber','$status')";
     $r = $conn->query($sql);
   }
 
@@ -161,7 +175,6 @@ function InsertDVD($name,$picture,$publisher,$introduction,$category,$date,$leve
 {
   include 'Connect.php';
   $id = FindMax('dvd') + 1;
-  ECHO $id,$name,$picture,$publisher,$introduction,$category,$date,$level,$time,$actor,$price;
   $sql = "Insert into dvd(Id,Name,Picture,Publisher,Introduction,Category,Publish_Date,Level,Time,Actor,Price) Value('$id','$name','$picture','$publisher','$introduction','$category','$date','$level','$time','$actor','$price')";
   $result=  $conn->query($sql);
   $Date_Time = date("Y-m-d");
@@ -242,7 +255,7 @@ function GetOrderList()
 function GetDVDByOrderId($id)
 {
   include 'Connect.php';
-  $sql="select DVD_Id from order_list_dvd where order_list_id='$id'";
+  $sql="select * from order_list_dvd where order_list_id='$id'";
   $result=  $conn->query($sql);
   $i=0;
   $list_arr=array();
@@ -267,25 +280,39 @@ function GetStatus()
   return $status;
 }
 
-function InsertOrderList($id,$price,$state,$Date_Time)
+
+function GetMember($id)
 {
   include 'Connect.php';
-  $max=FindMax('order_list');
-  $sql="Insert into order_list(Id,Member_Id,Cost,State,Date_Time) VALUES('$max','$id','$price','$state','$Date_Time')";
-  $result=  $conn->query($sql);
-  return $max;
-}
-function InsertOrderListDVD($max,$dvd_id)
-{
-  include 'Connect.php';
-  $sql="Insert into order_list_dvd(order_list_id,DVD_Id) VALUES('$max','$dvd_id')";
-  $result=  $conn->query($sql);
+  $sql="select * from member where Id='$id'";
+  $result = $conn->query($sql);
+  $i=0;
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr[0];
 }
 
-function DeleteCart($id)
+function GetStrogeByDVD($dvd_id)
 {
   include 'Connect.php';
-  $sql = "delete from shopping_cart where Member_Id='$id'";
-  $result=  $conn->query($sql);
+  $sql="select * from stroge_list where DVD_Id='$dvd_id'";
+  $result = $conn->query($sql);
+  $i=0;
+  $list_arr=array();
+  while($rows= mysqli_fetch_array($result)){
+    $list_arr[$i] = $rows;
+    $i++;
+   }
+  return  $list_arr[0];
+}
+
+function UpdateState($state,$id)
+{
+  include 'Connect.php';
+  $sql="UPDATE order_list SET State='$state' where Id='$id'";
+  $result = $conn->query($sql);
 }
 ?>

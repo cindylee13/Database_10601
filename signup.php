@@ -132,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<input type="text" name="Email" placeholder="Email" required="">
 					<input type="text" name="tel" placeholder="Phone Number" required="">
           <input type="text" name="Birthday" placeholder="Your Birthday YYYY/MM/DD" required="">
-          <input type="text" name="IDNumber" placeholder="ID Card Number" required="">
+          <input type="text" name="IDNumber" placeholder="Address" required="">
 					<input type="text" name="Password" placeholder="Password" required="">
 					<input type="text" name="Password2" placeholder="Confirm Password" required="">
           <select name="YourSex">

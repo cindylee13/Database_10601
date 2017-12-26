@@ -26,18 +26,6 @@ include('db.php');
 		<!-- //Navigation -->
 	<!-- header -->
 	<header>
-		<div class="w3ls-header"><!--header-one-->
-			<div class="w3ls-header-right">
-				<ul>
-					<li class="dropdown head-dpdn">
-						<a href="signin.php" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In   </a>
-            <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Home Page </a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="clearfix"> </div>
-		</div>
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
@@ -88,8 +76,11 @@ include('db.php');
 		<div class="container text-center mt-5">
 			  <div class="row mt-5">
 					<?php
-					 $type= $_GET["type"];
-					 $dvd = GetDVDByCategory($type);
+					$type= $_GET["type"];
+					if($type==-1)
+						$dvd=GetAllDVD();
+					else
+					 	$dvd = GetDVDByCategory($type);
 					$i=0;
 					while ( $i<count($dvd) ) {
 						$Name=$dvd[$i]['Name'];

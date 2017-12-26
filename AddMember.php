@@ -46,17 +46,6 @@ else if(!preg_match("/^[1-9]\d{3}\/[0-1]\d{1}\/[1-3]\d{1}/", $Birthday))
     else
       echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
 }
-<<<<<<< HEAD
-=======
-else if(!preg_match("/^[A-Z]\d{9}/", $IDNumber))
-{
-    echo  "ID Card Number format is not correct! The correct formcat is [A-Z]\d{9} ";
-    if($status==0)
-      echo '<meta http-equiv=REFRESH CONTENT=2;url=signup.php>';
-    else
-      echo '<meta http-equiv=REFRESH CONTENT=2;url=people_window.php>';
-}
->>>>>>> origin/master
 else
 {
   InsertMember($Id,$Name,$Email,$tel,$Birthday,$IDNumber,$Password,$Sex,$status);

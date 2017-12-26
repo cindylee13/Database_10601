@@ -1,24 +1,4 @@
 <!DOCTYPE html>
-<?php
-include("db.php");
-$id=GetSession();
-$cart=FindShoppingCart($id);
-$price=0;
-for($i=0;$i<count($cart);$i++)
-{
-  $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
-  $price+= $dvd['Price'];
-  $quantity=$cart[$i]['Quantity'];
-}
-$Date_Time = date("Y-m-d");
-$max=InsertOrderList(GetSession(),$price,'0',$Date_Time);
-for($i=0;$i<count($cart);$i++)
-{
-  $dvd = GetDvdInformation($cart[$i]['DVD_Id']);
-  InsertOrderListDVD($max,$dvd['Id']);
-}
-DeleteCart($id);
-?>
 <html lang="en">
 <link rel="stylesheet" href="css/stock.css">
 <link rel="stylesheet" href="css/common.css">
@@ -42,7 +22,7 @@ DeleteCart($id);
   else
     echo "<input class="."goback-button"." type ="."button" ." onclick="."javascript:location.href='stock.php'"." value= "."Go_Back"."></input>";
   ?>
-  <div class="table-product-2">
+  <div class="table-product-0">
     <ul>
       <li class="list-order">ID </li>
       <li class="list-order">Member_ID</li>
@@ -54,7 +34,7 @@ DeleteCart($id);
     </ul>
   </div>
 
-  <div class="table-product-3">
+  <div class="table-product-1">
     <ul>
       <?php
       include("OrderInformation.php");

@@ -16,11 +16,15 @@ for ($i=0; $i <count($order) ; $i++) {
   echo "<li class="."list-order"."> ".$name."<br>"."</li>";
   echo "<li class="."list-order".">".$order[$i]['Cost']."</li>";
   if($order[$i]['State']==0)
-    echo "<li class="."list-order".">"."出貨中"."</li>";
+    echo "<li class="."list-order".">"."Processing"."</li>";
   else if($order[$i]['State']==1)
-    echo "<li class="."list-order".">"."已收貨"."</li>";
+    echo "<li class="."list-order".">"."Shipping"."</li>";
+  else if($order[$i]['State']==2)
+    echo "<li class="."list-order".">"."Received"."</li>";
+  else if($order[$i]['State']==3)
+    echo "<li class="."list-order".">"."Closed"."</li>";
   echo "<li class="."list-order".">".$order[$i]['Date_Time']."</li>";
   if(GetStatus()!=0)
-    echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.html','state_window',config='height=300,width=300')"." value= edit></input><br>";
+    echo "<input class="."fix-button"." type ="."button"." onclick="."window.open('state_window.php?Id=$i','state_window',config='height=300,width=300')"." value= edit></input><br>";
 }
 ?>

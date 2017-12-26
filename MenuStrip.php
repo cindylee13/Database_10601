@@ -8,8 +8,8 @@
         <input placeholder="Search for something..." type="text" name="name">
         <input type="submit" value="Submit" name="search">
       </form>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Home</a></li>
+    <li><a href="EachCategory.php?type=-1">All Product</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="#">Product</a>
       <ul>
         <li><a href=<?php echo "EachCategory.php?type="."action" ?>  style="text-decoration:none;">Action</a></li>
@@ -22,8 +22,13 @@
         <li><a href=<?php echo "EachCategory.php?type="."war" ?>  style="text-decoration:none;">War</a></li>
       </ul>
     </li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact us</a></li>
+    <li><a href="contact.php">Contact Us</a></li>
+    <?php
+    if(GetStatus()==0)
+      echo "<li><a href="."customer_data.php".">會員中心</a></li>";
+    else if(GetStatus()==1 || GetStatus()==2)
+      echo "<li><a href="."stock.php".">管理中心</a></li>";
+    ?>
     <?php
              if(GetSession()>0)
              {
