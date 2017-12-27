@@ -74,13 +74,44 @@ if(isset($_GET['delete']))
   </head>
 
   <body>
-    <?php include("MenuStrip.php"); ?>
-
-    <div class="header">
-      <div class="title">
-          <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
-      </div><!--container-->
+    <div class="block">
+      <ul class="header__nav" >
+          <form action=Search.php method="Post" id="search-form">
+            <input placeholder="Search for something..." type="text" name="name">
+            <input type="submit" value="Submit" name="search">
+          </form>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Product</a>
+          <ul>
+            <li><a href=<?php echo "EachCategory.php?type="."action" ?>  style="text-decoration:none;">Action</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."adventure" ?>  style="text-decoration:none;">Adventure</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."comedy" ?>  style="text-decoration:none;">Comedy</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."crime" ?>  style="text-decoration:none;">Crime</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."horro" ?>  style="text-decoration:none;">Horror</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."drama" ?>  style="text-decoration:none;">Drama</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."sciencefiction" ?>  style="text-decoration:none;">Science Fiction</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."war" ?>  style="text-decoration:none;">War</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact us</a></li>
+        <?php
+                 if(GetSession()>0)
+                 {
+                  echo "<a href="."index.php?Id=-1 ".">";
+                  echo "<li></i> Log Out</a></li>";
+                 }
+                 else
+                 {
+                  echo "<a href="."signin.php".">";
+                  echo "<li></i> Sign In </a></li>";
+                 }
+                ?>
+        <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
+      </ul>
     </div>
+
     <div class="container">
 
       <section>
@@ -111,14 +142,23 @@ if(isset($_GET['delete']))
             $shopping_cart=FindShoppingCart(GetSession());
             for($i=0;$i<count($shopping_cart);$i++)
             {
+              if ($shopping_cart[$i]['DVD_Id']<49 && $shopping_cart[$i]['DVD_Id']>36)
+              {
+                $x=round($shopping_cart[$i]['Price'] * 0.95);
+                $y[$i]=round($shopping_cart[$i]['Price'] * 0.95);
+              }
+              else {
+                $x=$shopping_cart[$i]['Price'];
+                $y[$i]=$shopping_cart[$i]['Price'];
+              }
               $price="NT".$shopping_cart[$i]['Price'];
-              $total=$shopping_cart[$i]['Price']*$shopping_cart[$i]['Quantity'];
               echo "<li class="."create_box"."><p><img src=".$shopping_cart[$i]['Picture']."></p></li>";
               echo "<li class="."create_box"."><p>". $shopping_cart[$i]['Name'] ."</p></li>";
               echo "<li class="."create_box".">".$price."</li>";
               echo "<li class="."create_box".">".$shopping_cart[$i]['Quantity']."</li>";
-              echo "<li class="."create_box".">".$total."</li>";
-              echo "<li class="."create_box"."><a href="."shopping_cart.php?delete=".$shopping_cart[$i]['Id']."><img src=images/rubbish-bin.png></li>";
+              $price = "NT". $x * $shopping_cart[$i]['Quantity'];
+              echo "<li class="."create_box".">".$price."</li>";
+              echo "<li class="."create_box"."><a href="."shopping_cart.php?delete=".$shopping_cart[$i]['Id']."> <img src=images/rubbish-bin.png></a></li>";
             }
             ?>
           </ul>
@@ -126,19 +166,51 @@ if(isset($_GET['delete']))
       </section>
 
       <section>
+        <?php
+          $correct = 0;
+          $code=" ";
+         ?>
+        <div class="input_sale">
+          <form  action="shopping_cart.php" method="post">
+           Discount code:
+           <input type="text" name='text_sale'>
+           <input type="submit" name='submit' value='送出'>
+           <p>(The amount must be greater than $8044)</p>
+           </form>
+           <?php
+                $code=@$_POST['text_sale'];
+                $dis=comparison($code);
+           ?>
+        </div>
         <div class="total">
-          <span  style= "display:block">Sub Total:
+
+          <span  style= "display:block">Sub Total: NT
             <?php
             $totalPrice=0;
+            $Shipping=80;
               for($i=0;$i<count($shopping_cart);$i++)
-                $totalPrice += ($shopping_cart[$i]['Price']*$shopping_cart[$i]['Quantity']);
+                $totalPrice += ($y[$i]*$shopping_cart[$i]['Quantity']);
+              if ($totalPrice >= 500) {
+                $Shipping = 0;
+              }
               echo $totalPrice;
+
             ?></span>
-          <span  style= "display:block">Discount: </span>
-          <span  style= "display:block">Grand Toyal: </span>
+          <span  style= "display:block">Anniversary costs: NT<?= $dis?> </span>
+          <span  style= "display:block">Shipping costs: NT<?= $Shipping?> </span>
+          <?php
+            $grand=$totalPrice+$Shipping-$dis;
+           ?>
+          <span  style= "display:block">Grand Toyal: NT<?= $grand?></span>
         </div>
-        <div class="button-check"><a href=<?php echo "Confirm.php" ?>>Checkout</a></div>
+        <div class="button-check">
+          <a href=<?php echo "Confirm.php" ?>>Checkout</a>
+        </div>
       </section>
+
+
+
+
     </div>
 
     <footer>

@@ -14,20 +14,6 @@ function GetDVDByCategory($category)
    return $list_arr;
  }
 
- function GetAllDVD()
- {
-   include 'Connect.php';
-   $sql="select * from dvd";
-   $result=  $conn->query($sql);
-   $i=0;
-   $list_arr=array();
-   while($rows= mysqli_fetch_array($result)){
-     $list_arr[$i]=$rows;
-     $i++;
-    }
-    return $list_arr;
-  }
-
  function GetName($category)
  {
    include 'Connect.php';
@@ -280,7 +266,6 @@ function GetStatus()
   return $status;
 }
 
-
 function GetMember($id)
 {
   include 'Connect.php';
@@ -308,11 +293,15 @@ function GetStrogeByDVD($dvd_id)
    }
   return  $list_arr[0];
 }
-
-function UpdateState($state,$id)
+function comparison($code)
 {
-  include 'Connect.php';
-  $sql="UPDATE order_list SET State='$state' where Id='$id'";
-  $result = $conn->query($sql);
+  $correct=0;
+  if ($code == "dvdshop") {
+    if(date('m')=='12') {
+      $correct=300;
+    }
+  }
+  return $correct;
 }
+
 ?>

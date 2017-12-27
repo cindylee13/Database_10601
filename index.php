@@ -1,9 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <?php
 session_start();
 if(is_array($_GET)&&count($_GET)>0)//先判断是否通过get传值了
@@ -36,55 +30,88 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
     <link rel="stylesheet" href="css/stock.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/shopping_cart.css">
+    <link rel="stylesheet" href="css/pic.css">
 		<!-- //Navigation -->
 	<!-- header -->
 	<header>
-<?php include("MenuStrip.php"); ?>
-		<div class="container">
-      <div class="agile-its-header">
-        <div class="logo">
-          <h1><a href="index.php"><span>NTUT  </span>DVD Store <?php echo GetSession()?></a></h1>
-        </div>
-			</div>
-		</div>
+    <div class="block ">
+      <ul class="header__nav" >
+          <form action=Search.php method="Post" id="search-form">
+            <input placeholder="Search for something..." type="text" name="name">
+            <input type="submit" value="Submit" name="search">
+          </form>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Product</a>
+          <ul>
+            <li><a href=<?php echo "EachCategory.php?type="."action" ?>  style="text-decoration:none;">Action</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."adventure" ?>  style="text-decoration:none;">Adventure</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."comedy" ?>  style="text-decoration:none;">Comedy</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."crime" ?>  style="text-decoration:none;">Crime</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."horro" ?>  style="text-decoration:none;">Horror</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."drama" ?>  style="text-decoration:none;">Drama</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."sciencefiction" ?>  style="text-decoration:none;">Science Fiction</a></li>
+            <li><a href=<?php echo "EachCategory.php?type="."war" ?>  style="text-decoration:none;">War</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact us</a></li>
+        <?php
+                 if(GetSession()>0)
+                 {
+                  echo "<a href="."index.php?Id=-1 ".">";
+                  echo "<li></i> Log Out</a></li>";
+                 }
+                 else
+                 {
+                  echo "<a href="."signin.php".">";
+                  echo "<li></i> Sign In </a></li>";
+                 }
+                ?>
+        <li><a href="shopping_cart.php"><img  src="images/shopping-cart.png" alt="shopping"></a></li>
+      </ul>
+    </div>
+    <div class="header">
+      <div class="title">
+          <h1><a href="index.php" target="DVD Store">NTUT </a></h1>
+      </div>
+    </div>
 	</header>
 
 	<!-- //header -->
 	<!-- Slider -->
-		<div class="slider">
-			<ul class="rslides" id="slider">
-				<li>
-					<div class="w3ls-slide-text">
-						<h3>Sell or Advertise anything online</h3>
-						<a href="categories.html" class="w3layouts-explore-all">Browse all Categories</a>
-					</div>
-				</li>
-				<li>
-					<div class="w3ls-slide-text">
-						<h3>Find the Best Deals Here</h3>
-						<a href="categories.html" class="w3layouts-explore">Explore</a>
-					</div>
-				</li>
-				<li>
-					<div class="w3ls-slide-text">
-						<h3>Lets build the home of your dreams</h3>
-						<a href="real-estate.html" class="w3layouts-explore">Explore</a>
-					</div>
-				</li>
-				<li>
-					<div class="w3ls-slide-text">
-						<h3>Find your dream ride</h3>
-						<a href="crime.html" class="w3layouts-explore">Explore</a>
-					</div>
-				</li>
-				<li>
-					<div class="w3ls-slide-text">
-						<h3>The Easiest Way to get a Job</h3>
-						<a href="jobs.html" class="w3layouts-explore">Find a Job</a>
-					</div>
-				</li>
-			</ul>
-		</div>
+  <div class="sliders">
+    <div class="w3-content w3-display-container">
+      <img class="mySlides" src="images/sale.jpg" style="width:100%">
+      <img class="mySlides" src="images/sale-1.png" style="width:100%">
+      <img class="mySlides" src="images/sale-2.png" style="width:100%">
+      <img class="mySlides" src="images/sale-3.png" style="width:100%">
+
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+  </div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
+
 		<!-- //Slider -->
 		<!-- content-starts-here -->
 		<div class="main-content">
@@ -227,10 +254,42 @@ $iconList=array("fa fa-bug","fa fa-television","fa fa-rebel","fa fa-smile-o","fa
 					});
 				});
 			</script>
-      <?php
-      include("below.php");
-      ?>
-			<!-- start-smoth-scrolling -->
-		<!-- //here ends scrolling icon -->
+      <footer>
+        <div class="footer-0 b2">
+            <ul class="footer-1">
+              <p>Product</p>
+              <li><a href="#"  style="text-decoration:none;">Action</a></li>
+              <li><a href="#"  style="text-decoration:none;">Adventure</a></li>
+              <li><a href="#"  style="text-decoration:none;">Comedy</a></li>
+              <li><a href="#"  style="text-decoration:none;">Crime</a></li>
+              <li><a href="#"  style="text-decoration:none;">Horror</a></li>
+              <li><a href="#"  style="text-decoration:none;">Drama</a></li>
+              <li><a href="#"  style="text-decoration:none;">Science Fiction</a></li>
+              <li><a href="#"  style="text-decoration:none;">War</a></li>
+            </ul>
+
+            <ul class="footer-2">
+              <p>Connect With Us</p>
+              <li><a href="https://www.instagram.com/"><img src="images/instagram.png" alt="instagram"/></a></li>
+              <li><a href="https://www.facebook.com/"><img  src="images/facebook.png" alt="instagram"/></a></li>
+              <li><a href="https://www.youtube.com/"><img  src="images/youtube.png" alt="instagram"/></a></li>
+              <li><a href="https://twitter.com/?lang=zh-tw"><img src="images/twitter.png" alt="instagram"/></a></li>
+              <li><a href="https://plus.google.com/?hl=zh-TW" ><img  src="images/google-plus.png" alt="instagram"/></a></li>
+              <li><a href="https://www.skype.com/zh-Hant/new/"><img src="images/skype.png" alt="instagram"/></a></li>
+            </ul>
+
+            <ul class="footer-3">
+              <p>About Us</p>
+              <li><a href="#"  style="text-decoration:none;">Blog</a></li>
+              <li><a href="#"  style="text-decoration:none;">News</a></li>
+              <li><a href="contact.php"  style="text-decoration:none;">Contact Us</a></li>
+            </ul>
+          <div class="footer-4">
+            <p>地址:台北市大安區忠孝東路三段一號</p>
+            <p>電話:02-2771-2171</p>
+          </div>
+        </div>
+      </footer>
+
 </body>
 </html>
